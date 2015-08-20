@@ -1,6 +1,6 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial']);
 
-var server = 'http://10.21.208.212:9000/';
+var server = 'http://10.21.210.107:9000/';
 
 app.config(function ($routeProvider){
   $routeProvider

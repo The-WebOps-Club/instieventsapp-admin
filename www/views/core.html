@@ -24,7 +24,7 @@
       <md-button class="md-primary" ng-click="action='addConvenor'">Assign Convenors</md-button>
     </md-list-item>
     <md-list-item>
-    <md-button class="md-primary">Add Litsoc Events</md-button>
+    <md-button class="md-primary" ng-click="action='addLitsocEvent'">Add Litsoc Events</md-button>
     </md-list-item>
     <md-divider></md-divider>
     <md-subheader class="md-no-sticky"></md-subheader>
@@ -73,9 +73,9 @@
       <div layout="row">
       <div flex="20"></div>
       <div flex="40">
-      <md-input-container>
-      <label>Club Description</label>
-      <input type="text" ng-model="description" required style="height:100px;border:1px solid rgba(0, 0, 0, 0.117647);">
+      <md-input-container flex>
+        <label>Club Description</label>
+        <textarea ng-model="club_description" columns="1" md-maxlength="150"></textarea>
       </md-input-container>
       </div>
       <div flex></div>
@@ -95,7 +95,7 @@
           <!--Add convenors-->
       <div layout="column">
 
-       <!--Username-->
+       <!--Convenor Name-->
        <div layout="row">
         <div flex="20"></div>
         <div flex="40">
@@ -107,7 +107,7 @@
       <div flex></div>
     </div>
     <!---->
-    <!--Password-->
+    <!--Convenor Roll No-->
     <div layout="row">
       <div flex="20"></div>
       <div flex="40">
@@ -115,6 +115,45 @@
         <label>Convenor Roll No</label>
         <input type="text" ng-model="convenor_roll_no" required>
       </md-input-container>
+    </div>
+    <div flex></div>
+    </div>
+    <!---->
+    <!--Submit/Reset-->
+    <div layout="row">
+      <div flex="45"></div>
+      <md-button class="md-raised">Submit</md-button>
+      <md-button class="md-raised" ng-click="reset()">Reset</md-button>
+
+    </div>
+    <!---->
+  </div>
+</div>
+
+<div ng-switch-when="addLitsocEvent">
+          <!--Add Litsoc Event-->
+      <div layout="column">
+
+       <!--Event Name-->
+       <div layout="row">
+        <div flex="20"></div>
+        <div flex="40">
+          <md-input-container>
+          <label>Event name</label>
+          <input type="text" ng-model="event_name" required>
+        </md-input-container>
+      </div>
+      <div flex></div>
+    </div>
+    <!---->
+    <!--Event Date-->
+    <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+        <md-input-container>
+          <label>Event date</label>
+          <input type="date" ng-model="event_date">
+        </md-input-container>
     </div>
     <div flex></div>
     </div>
