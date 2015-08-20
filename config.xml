@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.your.company.aqel" version="0.0.1">
+    <name>aqel</name>
+
+    <description>Plain text description of this app</description>
+
+    <author>Author Name &lt;a@b.com></author>
+
+    <preference name="KeyboardShrinksView" value="true"/>
+    <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#000000"/>
+    <preference name="iosPersistentFileLocation" value="Library"/>
+    <preference name="AndroidPersistentFileLocation" value="Internal"/>
+
+    <content src="plugins/cordova-plugin-chrome-apps-bootstrap/chromeapp.html"/>
+<preference name="android-minSdkVersion" value="14"/><platform name="android"><icon src="www/assets/icon_128.png"/><icon src="www/assets/icon_16.png" width="16"/><icon src="www/assets/icon_128.png" width="128"/></platform><platform name="ios"><icon src="www/assets/icon_128.png"/><icon src="www/assets/icon_16.png" width="16"/><icon src="www/assets/icon_128.png" width="128"/></platform></widget>

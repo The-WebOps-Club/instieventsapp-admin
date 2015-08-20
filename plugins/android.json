@@ -1,0 +1,153 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"BackgroundPlugin\"><param name=\"android-package\" value=\"org.chromium.BackgroundPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeStorage\"><param name=\"android-package\" value=\"org.chromium.ChromeStorage\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeAppWindow\"><param name=\"android-package\" value=\"org.chromium.ChromeAppWindow\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeExtensionURLs\"><param name=\"android-package\" value=\"org.chromium.ChromeExtensionURLs\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"chrome-extension://*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"DisallowOverscroll\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeI18n\"><param name=\"android-package\" value=\"org.chromium.ChromeI18n\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeNavigation\"><param name=\"android-package\" value=\"org.chromium.ChromeNavigation\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<preference name=\"webView\" value=\"org.crosswalk.engine.XWalkWebViewEngine\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:excludeFromRecents=\"true\" android:name=\"org.chromium.BackgroundLauncherActivity\" android:taskAffinity=\".launcher\" android:theme=\"@android:style/Theme.NoDisplay\"><intent-filter android:label=\"@string/launcher_name\"><action android:name=\"android.intent.action.MAIN\" /><category android:name=\"android.intent.category.LAUNCHER\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:alwaysRetainTaskState=\"true\" android:configChanges=\"orientation|keyboardHidden|keyboard|screenSize|locale\" android:excludeFromRecents=\"true\" android:exported=\"false\" android:launchMode=\"singleTop\" android:name=\"org.chromium.BackgroundActivity\" android:taskAffinity=\".cordovabackground\" android:theme=\"@android:style/Theme.NoDisplay\"></activity>",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-background-app": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-blob-constructor-polyfill": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-chrome-apps-bootstrap": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-chrome-apps-i18n": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-chrome-apps-navigation": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-customevent-polyfill": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-xhr-blob-polyfill": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "org.chromium.cca-hooks": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-chrome-apps-common": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-chrome-apps-storage": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        },
+        "cordova-plugin-chrome-apps-runtime": {
+            "PACKAGE_NAME": "com.your.company.aqel"
+        }
+    }
+}

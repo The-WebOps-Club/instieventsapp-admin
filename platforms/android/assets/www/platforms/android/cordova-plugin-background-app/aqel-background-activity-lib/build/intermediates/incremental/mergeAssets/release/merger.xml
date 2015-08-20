@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/Ahammad/Development/chrome/HelloWorld/platforms/android/cordova-plugin-background-app/aqel-background-activity-lib/assets"/></dataSet><dataSet config="release"><source path="/Users/Ahammad/Development/chrome/HelloWorld/platforms/android/cordova-plugin-background-app/aqel-background-activity-lib/src/release/assets"/></dataSet></merger>

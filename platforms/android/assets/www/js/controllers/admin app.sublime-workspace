@@ -1,0 +1,476 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"user",
+				"username"
+			],
+			[
+				"Cate",
+				"CategorySchema"
+			],
+			[
+				"adminB",
+				"adminObje"
+			],
+			[
+				"valid",
+				"validityDate"
+			],
+			[
+				"get",
+				"getMD5"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"re",
+				"req"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/index.html",
+			"settings":
+			{
+				"buffer_size": 4403,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "loginctrl.js",
+			"settings":
+			{
+				"buffer_size": 2205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/password.html",
+			"settings":
+			{
+				"buffer_size": 1786,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test.js",
+			"settings":
+			{
+				"buffer_size": 29,
+				"line_ending": "Unix",
+				"name": "console.log(\"I am here\");"
+			}
+		},
+		{
+			"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/index.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/index.html",
+		"/Users/Ahammad/Development/chrome/material-start/a/app/index.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/login.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/page2.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/password.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/js/controllers/loginctrl.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/about.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/left-page-2.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/index.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/my-app.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/manifest.json",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/js/frameworks/my-app.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/index1.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/page2.html",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/bower.json",
+		"/Users/Ahammad/node/instieventsportal/client/app/main/main.controller.js",
+		"/Users/Ahammad/node/instieventsportal/client/app/app.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/js/frameworks/framework7.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/js/frameworks/framework7.min.js",
+		"/Users/Ahammad/Development/chrome/instieventsapp-admin/www/js/frameworks/framework7.js.map",
+		"/Users/Ahammad/node/instieventsportal/server/api/event/event.model.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/event/event.controller.js",
+		"/Users/Ahammad/node/instieventsportal/server/auth/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/auth/local/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/thing/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/admin/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/config/environment/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/auth/auth.service.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/admin/admin.controller.js",
+		"/Users/Ahammad/node/instieventsportal/server/auth/local/passport.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/user/user.model.js",
+		"/Users/Ahammad/node/instieventsportal/server/config/environment/development.js",
+		"/Users/Ahammad/node/instieventsportal/client/app/main/main.html",
+		"/Users/Ahammad/node/instieventsportal/server/api/event/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/club/club.model.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/club/club.controller.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/club/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/admin/admin.model.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/department/department.controller.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/user/user.controller.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/auth/local/index.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/wall/wall.model.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/user/user.model.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/user/index.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/subDepartment/subDepartment.model.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/user/index.js",
+		"/Users/Ahammad/node/instieventsportal/server/views/404.html",
+		"/Users/Ahammad/node/instieventsportal/server/config/express.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/thing/thing.controller.js",
+		"/Users/Ahammad/node/instieventsportal/server/app.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/comment/comment.controller.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/comment/comment.model.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/user/user.model.spec.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/admin/admin.spec.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/admin/admin.socket.js",
+		"/Users/Ahammad/node/instieventsportal/server/api/user/user.controller.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/subDepartment/index.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/subDepartment/subDepartment.controller.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/auth/local/passport.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/auth/auth.service.js",
+		"/Users/Ahammad/Development/server/api/thing/index.js",
+		"/Users/Ahammad/Development/nodejs/erp-2016/server/api/upload/index.js",
+		"/Users/Ahammad/Development/server/config/environment/index.js",
+		"/Users/Ahammad/Development/server/api/admin/admin.model.js",
+		"/Users/Ahammad/Development/server/api/admin/admin.socket.js",
+		"/Users/Ahammad/Development/server/api/user/user.model.js",
+		"/Users/Ahammad/Development/server/auth/local/index.js",
+		"/Users/Ahammad/Development/server/auth/auth.service.js",
+		"/Users/Ahammad/Development/server/auth/local/passport.js",
+		"/Users/Ahammad/Development/server/api/user/user.model.spec.js",
+		"/Users/Ahammad/Development/server/api/thing/thing.spec.js",
+		"/Users/Ahammad/Development/server/api/thing/thing.socket.js",
+		"/Users/Ahammad/Development/server/api/thing/thing.model.js",
+		"/Users/Ahammad/Development/server/api/thing/thing.controller.js",
+		"/Users/Ahammad/Development/nodejs/test/dist/server/app.js",
+		"/Users/Ahammad/Documents/Saarang/test",
+		"/Users/Ahammad/Development/html/file hashing/script.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"userService",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"roleService",
+			"framew",
+			"framework7",
+			"populate",
+			"login",
+			"rollNumber",
+			"admin",
+			"');\n",
+			"email",
+			"console.log",
+			"Department",
+			"sec",
+			"function hasRole(roleRequired) {\n  if (!roleRequired) throw new Error('Required role needs to be set');\n\n  return compose()\n    .use(isAuthenticated())\n    .use(function meetsRequirements(req, res, next) {\n      if (config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(roleRequired)) {\n        next();\n      }\n      else {\n        res.send(403);\n      }\n    });\n}\n",
+			") ",
+			"af",
+			"cookieParser",
+			"body-parser",
+			"console",
+			".configure",
+			".bodyParser()",
+			".bodyParser());",
+			".use(express.bodyParser());",
+			".use(express.cookieParser());",
+			"app.use(express.cookieParser());",
+			"},",
+			"email",
+			"rollNumber",
+			"email",
+			"UserSchema",
+			"authenticate",
+			"passport.authenticate",
+			"passport",
+			"authenticate",
+			"signMobileToken",
+			"USERROLES",
+			"hasRole",
+			"next",
+			"isAuthenticated",
+			"config.mongo",
+			"config.mongo.uri",
+			"mongoose.connect",
+			"connect",
+			"port",
+			"\"\",",
+			">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"rollNumber"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/index.html",
+					"settings":
+					{
+						"buffer_size": 4403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								640,
+								644
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "loginctrl.js",
+					"settings":
+					{
+						"buffer_size": 2205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1757,
+								1757
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/password.html",
+					"settings":
+					{
+						"buffer_size": 1786,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								94,
+								24
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test.js",
+					"settings":
+					{
+						"buffer_size": 29,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26,
+								26
+							]
+						],
+						"settings":
+						{
+							"auto_name": "console.log(\"I am here\");",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/Ahammad/Development/chrome/instieventsapp-admin/www/views/index.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 163.0,
+	"status_bar_visible": true
+}

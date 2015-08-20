@@ -1,0 +1,65 @@
+<body>
+    <div class="header" layout="column">
+    
+  <!--Toolbar-->
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+
+        <md-button class="md-icon-button" aria-label="Home" ng-click="">
+          <md-tooltip>Home</md-tooltip>
+          <md-icon class="md-default-theme" class="material-icons">home</md-icon>
+        </md-button>
+
+        <h2>
+          <span>Login</span>
+        </h2>
+        <span flex=""></span>
+
+      </div>
+    </md-toolbar>
+    <!--/Toolbar-->
+    <br>
+    <br>
+
+
+    <!--Content-->
+    <div layout="column">
+    
+   <!--Username-->
+    <div layout="row">
+    <div flex="20"></div>
+    <div flex="40">
+      <md-input-container>
+      <label>Username</label>
+      <input type="text" ng-model="username" required>
+      </md-input-container>
+    </div>
+    <div flex></div>
+    </div>
+    <!---->
+    <!--Password-->
+    <div layout="row">
+    <div flex="20"></div>
+    <div flex="40">
+      <md-input-container>
+      <label>Password</label>
+      <input type="password" ng-model="password" required>
+      </md-input-container>
+    </div>
+    <div flex></div>
+    </div>
+    <!---->
+    <!--Submit/Reset-->
+    <div layout="row">
+    <div flex="45"></div>
+     <md-button class="md-raised" ng-click="login()">Login</md-button>
+     <md-button class="md-raised" ng-click="reset()">Reset</md-button>
+   
+    </div>
+    <!---->
+    
+
+    
+</div>
+
+</body>

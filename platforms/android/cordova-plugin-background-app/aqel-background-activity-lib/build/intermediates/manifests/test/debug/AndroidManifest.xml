@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.chromium.backgroundapp.test" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for org.chromium.backgroundapp.test"
+        android:targetPackage="org.chromium.backgroundapp.test" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.your.company.aqel.MainActivity"
+            android:allowTaskReparenting="true"
+            android:exported="true" >
+
+            <!--
+                 exported=true needed only when using ApplicationContext to launch activity.
+                 ApplicationContext only needed on older Androids, where exported=true is
+                 not required, so there may be a way to not need to export based on sdk
+            -->
+        </activity>
+    </application>
+
+</manifest>

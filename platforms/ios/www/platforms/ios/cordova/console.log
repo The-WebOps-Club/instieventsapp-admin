@@ -1,0 +1,75 @@
+2015-06-13 22:21:18.118 YourApp[5394:255882] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Ahammad/Library/Developer/CoreSimulator/Devices/5711B738-4985-4695-B62E-C97BEA1EFDFF/data/Containers/Data/Application/04CCA2D1-80C2-4C85-BAD0-B2A7855CFDB4/Library/Cookies/Cookies.binarycookies
+2015-06-13 22:21:18.419 YourApp[5394:255882] Apache Cordova native platform version 3.8.0 is starting.
+2015-06-13 22:21:18.420 YourApp[5394:255882] Multi-tasking -> Device: YES, App: YES
+2015-06-13 22:21:18.440 YourApp[5394:255882] Unlimited access to network resources
+2015-06-13 22:21:18.450 YourApp[5394:255882] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-06-13 22:21:18.762 YourApp[5394:255882] [CDVTimer][chromeextensionurls] 0.048995ms
+2015-06-13 22:21:18.763 YourApp[5394:255882] [CDVTimer][chromenavigation] 0.041008ms
+2015-06-13 22:21:18.775 YourApp[5394:255882] [CDVTimer][file] 11.970997ms
+2015-06-13 22:21:18.901 YourApp[5394:255882] [CDVTimer][statusbar] 126.627028ms
+2015-06-13 22:21:18.902 YourApp[5394:255882] [CDVTimer][TotalPluginStartup] 139.602005ms
+2015-06-13 22:21:19.256 YourApp[5394:255882] Resetting plugins due to page load.
+2015-06-13 22:21:19.388 YourApp[5394:255882] THREAD WARNING: ['BackgroundPlugin'] took '10.081055' ms. Plugin should use a background thread.
+2015-06-13 22:21:19.469 YourApp[5394:255882] Finished load of: chrome-extension://eioajjlgjnjcljcoheglpcjgeojheaia/index.html
+2015-06-13 22:24:10.451 aqel[6832:259917] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Ahammad/Library/Developer/CoreSimulator/Devices/5711B738-4985-4695-B62E-C97BEA1EFDFF/data/Containers/Data/Application/567DF38C-62C4-4234-BF4A-C5612B72E2FC/Library/Cookies/Cookies.binarycookies
+2015-06-13 22:24:10.586 aqel[6832:259917] Apache Cordova native platform version 3.8.0 is starting.
+2015-06-13 22:24:10.587 aqel[6832:259917] Multi-tasking -> Device: YES, App: YES
+2015-06-13 22:24:10.594 aqel[6832:259917] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-06-13 22:24:10.674 aqel[6832:259917] [CDVTimer][chromeextensionurls] 0.050008ms
+2015-06-13 22:24:10.674 aqel[6832:259917] [CDVTimer][chromenavigation] 0.038028ms
+2015-06-13 22:24:10.678 aqel[6832:259917] [CDVTimer][file] 3.726006ms
+2015-06-13 22:24:10.705 aqel[6832:259917] [CDVTimer][statusbar] 26.762009ms
+2015-06-13 22:24:10.705 aqel[6832:259917] [CDVTimer][TotalPluginStartup] 31.525970ms
+2015-06-13 22:24:10.926 aqel[6832:259917] Resetting plugins due to page load.
+2015-06-13 22:24:11.335 aqel[6832:259917] Finished load of: chrome-extension://kaalkignkdijcgignckcmkiidaobilbe/index.html
+2015-06-13 23:15:31.327 aqel[9484:291966] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Ahammad/Library/Developer/CoreSimulator/Devices/5711B738-4985-4695-B62E-C97BEA1EFDFF/data/Containers/Data/Application/22E03363-1DB7-4EFD-9E8D-90AAE1D76A77/Library/Cookies/Cookies.binarycookies
+2015-06-13 23:15:31.609 aqel[9484:291966] Apache Cordova native platform version 3.8.0 is starting.
+2015-06-13 23:15:31.610 aqel[9484:291966] Multi-tasking -> Device: YES, App: YES
+2015-06-13 23:15:31.648 aqel[9484:291966] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-06-13 23:15:31.991 aqel[9484:291966] [CDVTimer][chromeextensionurls] 0.051975ms
+2015-06-13 23:15:31.991 aqel[9484:291966] [CDVTimer][chromenavigation] 0.034988ms
+2015-06-13 23:15:32.000 aqel[9484:291966] [CDVTimer][file] 8.347988ms
+2015-06-13 23:15:32.126 aqel[9484:291966] [CDVTimer][statusbar] 125.567973ms
+2015-06-13 23:15:32.126 aqel[9484:291966] [CDVTimer][TotalPluginStartup] 134.782970ms
+2015-06-13 23:15:32.270 aqel[9484:291966] Resetting plugins due to page load.
+2015-06-13 23:15:32.455 aqel[9484:291966] THREAD WARNING: ['BackgroundPlugin'] took '17.643066' ms. Plugin should use a background thread.
+2015-06-13 23:15:32.734 aqel[9484:291966] Finished load of: chrome-extension://kaalkignkdijcgignckcmkiidaobilbe/index.html
+2015-08-09 11:57:15.925 aqel[6297:60593] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Ahammad/Library/Developer/CoreSimulator/Devices/5711B738-4985-4695-B62E-C97BEA1EFDFF/data/Containers/Data/Application/A58CEA07-52BD-4E4F-9A5A-439EF5D3C265/Library/Cookies/Cookies.binarycookies
+2015-08-09 11:57:16.040 aqel[6297:60593] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-09 11:57:16.040 aqel[6297:60593] Multi-tasking -> Device: YES, App: YES
+2015-08-09 11:57:16.046 aqel[6297:60593] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-08-09 11:57:16.116 aqel[6297:60593] [CDVTimer][chromeextensionurls] 0.048995ms
+2015-08-09 11:57:16.116 aqel[6297:60593] [CDVTimer][chromenavigation] 0.042021ms
+2015-08-09 11:57:16.122 aqel[6297:60593] [CDVTimer][file] 5.348980ms
+2015-08-09 11:57:16.148 aqel[6297:60593] [CDVTimer][statusbar] 25.627017ms
+2015-08-09 11:57:16.148 aqel[6297:60593] [CDVTimer][TotalPluginStartup] 32.133043ms
+2015-08-09 11:57:16.198 aqel[6297:60593] Resetting plugins due to page load.
+2015-08-09 11:57:16.691 aqel[6297:60593] Finished load of: chrome-extension://kaalkignkdijcgignckcmkiidaobilbe/index.html

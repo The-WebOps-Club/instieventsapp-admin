@@ -1,0 +1,161 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"BackgroundPlugin\"><param name=\"ios-package\" value=\"MCABackgroundApp\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeStorage\"><param name=\"ios-package\" value=\"ChromeStorage\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeAppWindow\"><param name=\"ios-package\" value=\"ChromeAppWindow\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeExtensionURLs\"><param name=\"ios-package\" value=\"ChromeExtensionURLs\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"chrome-extension://*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"KeyboardDisplayRequiresUserAction\" value=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"DisallowOverscroll\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeI18n\"><param name=\"ios-package\" value=\"ChromeI18n\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ChromeNavigation\"><param name=\"ios-package\" value=\"ChromeNavigation\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-background-app": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-blob-constructor-polyfill": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-chrome-apps-bootstrap": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-chrome-apps-i18n": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-chrome-apps-navigation": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-customevent-polyfill": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-xhr-blob-polyfill": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "org.chromium.cca-hooks": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-chrome-apps-common": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-chrome-apps-storage": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        },
+        "cordova-plugin-chrome-apps-runtime": {
+            "PACKAGE_NAME": "com.your.company.YourApp"
+        }
+    }
+}
