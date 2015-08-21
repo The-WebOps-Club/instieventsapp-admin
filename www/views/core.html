@@ -55,6 +55,16 @@
  
 </div>
 <div ng-switch on="action">
+
+  <div class="row" ng-switch-when="home">
+    <div class="col-lg-12">
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in events">
+        <li><a href="#" tooltip="{{thing.name}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Adding new club -->
   <div ng-switch-when="addClub" >
       <div layout="column">
       <!--Club Name-->
@@ -91,17 +101,26 @@
 
   </div>
 
+  <!-- Assigning convenors to existing club  -->
   <div ng-switch-when="addConvenor">
-          <!--Add convenors-->
       <div layout="column">
 
        <!--Convenor Name-->
        <div layout="row">
+
         <div flex="20"></div>
         <div flex="40">
-          <md-input-container>
+           <!-- Club name -->
+        <md-input-container>
+          <label>Club</label>
+          <md-select ng-model="convenor.club">
+            <md-option ng-repeat="club in clubs" value="{{club._id}}">{{club.name}}</md-option>
+          </md-select>
+        </md-input-container>
+
+        <md-input-container>
           <label>Convenor name</label>
-          <input type="text" ng-model="convenor_name" required>
+          <input type="text" ng-model="convenor.name" required>
         </md-input-container>
       </div>
       <div flex></div>
@@ -113,7 +132,7 @@
       <div flex="40">
         <md-input-container>
         <label>Convenor Roll No</label>
-        <input type="text" ng-model="convenor_roll_no" required>
+        <input type="text" ng-model="convenor.rollNo" required>
       </md-input-container>
     </div>
     <div flex></div>
@@ -122,7 +141,7 @@
     <!--Submit/Reset-->
     <div layout="row">
       <div flex="45"></div>
-      <md-button class="md-raised">Submit</md-button>
+      <md-button class="md-raised" ng-click=addConvenor(convenor) >Submit</md-button>
       <md-button class="md-raised" ng-click="reset()">Reset</md-button>
 
     </div>

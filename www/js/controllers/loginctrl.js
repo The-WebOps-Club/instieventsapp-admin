@@ -1,6 +1,6 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial','ngStorage']);
 
-var server = 'http://192.168.0.7:9000/';
+var server = 'http://192.168.0.6:9000/';
 
 app.config(function ($routeProvider){
   $routeProvider
@@ -77,7 +77,49 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
   $scope.closeSideNavPanel = function() {
     $mdSidenav('left').close();
   };
-  $scope.action = 'addClub';
+  $scope.action = 'home';
+
+  // Request to get all events
+  var eventsReq = {
+     method: 'GET',
+     url: server + 'api/events',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+     }
+  }
+  $http(eventsReq).then(function(response){
+        console.log(response);
+        $localStorage.events = response.data;
+        $scope.events = response.data;
+      }, 
+      function(response){
+          console.log(response);
+          if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+
+  // Request to load all clubs
+  var clubReq = {
+     method: 'GET',
+     url: server + 'api/clubs',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+     }
+  }
+  $http(clubReq).then(function(response){
+        console.log(response);
+        $localStorage.clubs = response.data;
+        $scope.clubs = response.data;
+      }, 
+      function(response){
+          console.log(response);
+          if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+
+
   $scope.addClub = function(club){
     var req = {
      method: 'POST',
@@ -94,9 +136,14 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
         alert('successfully added');
       }, 
       function(response){
-        alert(response.data.errors.message);
-        console.log(response.data.errors);
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
       });
+  }
+
+  $scope.addConvenor = function(convenor){
+    console.log(convenor);
   }
 
 });
