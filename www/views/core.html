@@ -50,7 +50,7 @@
         </md-button>
 
         <h2>
-          <span>Core</span>
+          <span>{{user.name}}</span>
         </h2>
         <span flex=""></span>
         
@@ -73,7 +73,7 @@
       <div flex="40">
       <md-input-container>
       <label>Club Name</label>
-      <input type="text" ng-model="name" name="clubName" required >
+      <input type="text" ng-model="club.name" required>
       <div class="error" ng-show="addClub.clubName.$error.required" style="">Club name is required</div> 
       </md-input-container>
       </div>
@@ -88,7 +88,7 @@
       <div flex="40">
       <md-input-container flex>
         <label>Club Description</label>
-        <textarea ng-model="club_description" columns="1"></textarea>
+        <textarea ng-model="club.description" columns="1" ></textarea>
       </md-input-container>
       </div>
       <div flex></div>
@@ -97,8 +97,8 @@
    </form>   
       <!--Submit-->
       <div layout="row">
-      <div flex="40"></div>
-      <md-button class="md-raised" type="submit" ng-disabled="addClub.clubName.$error.required">Submit</md-button>
+      <div flex="45"></div>
+      <md-button class="md-raised" ng-click=addClub(club) ng-disabled="addClub.clubName.$error.required">Submit</md-button>
       <md-button class="md-raised" ng-disabled="addClub.clubName.$error.required">Add convenors</md-button>
       </div>
       </div>
