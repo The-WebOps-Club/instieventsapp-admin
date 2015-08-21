@@ -18,3 +18,10 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+.ng-untouched + .error{
+  display: none;
+}
+.error{
+  color: #C00;
+}
