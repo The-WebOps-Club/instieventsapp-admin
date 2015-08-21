@@ -1,122 +1,166 @@
 
-    <div class="header">
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-    md-component-id="left">
-  <md-toolbar layout="row">
-   <div class="md-toolbar-tools">
-        <h2>
-          <span>Side Panel</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
-          <md-tooltip>Close Side Panel</md-tooltip>
-          <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
-        </md-button>
-       </div>
-  </md-toolbar> 
-  <md-content layout-padding="">
-  <md-list>
-    <md-subheader class="md-no-sticky"></md-subheader>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='addClub'">Add club</md-button>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='addConvenor'">Assign Convenors</md-button>
-    </md-list-item>
-    <md-list-item>
-    <md-button class="md-primary" ng-click="action='addLitsocEvent'">Add Litsoc Events</md-button>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-subheader class="md-no-sticky"></md-subheader>
-    <md-list-item>
-      <md-button class="md-primary">Send push notifications</md-button>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='ChangePassword'">Change Password</md-button>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="Logout()">Logout</md-button>
-      <div flex="5"></div>
-    </md-list-item>
-   </md-list>
-  </md-content> 
-</md-sidenav>
-  
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
-          <md-tooltip>Side Panel</md-tooltip>
-          <md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>
-        </md-button>
+<div class="header">
 
-        <h2>
-          <span>{{user.name}}</span>
-        </h2>
-        <span flex=""></span>
-        
-        <md-button class="md-icon-button" aria-label="More">
-         
-        </md-button>
-      </div>
-    </md-toolbar>
- 
+  <!-- Sidenav -->
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+  <md-toolbar layout="row">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>Side Panel</span>
+    </h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+    <md-tooltip>Close Side Panel</md-tooltip>
+    <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+  </md-button>
+</div>
+</md-toolbar> 
+<md-content layout-padding="">
+<md-list>
+<md-subheader class="md-no-sticky"></md-subheader>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='addClub'">Add club</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='addConvenor'">Assign Convenors</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='addLitsocEvent'">Add Litsoc Events</md-button>
+</md-list-item>
+<md-divider></md-divider>
+<md-subheader class="md-no-sticky"></md-subheader>
+<md-list-item>
+<md-button class="md-primary">Send push notifications</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='ChangePassword'">Change Password</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="Logout()">Logout</md-button>
+<div flex="5"></div>
+</md-list-item>
+</md-list>
+</md-content> 
+</md-sidenav>
+<!-- Sidenav -->
+<!-- Toolbar -->
+<md-toolbar>
+<div class="md-toolbar-tools">
+  <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+  <md-tooltip>Side Panel</md-tooltip>
+  <md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>
+</md-button>
+
+<h2>
+  <span>{{user.name}}</span>
+</h2>
+<span flex=""></span>
+
+<md-button class="md-icon-button" aria-label="More">
+
+</md-button>
+</div>
+</md-toolbar>
+
+<!-- Toolbar -->
+
 </div>
 <div ng-switch on="action">
 
   <div ng-switch-when="addClub" >
-  <form name="addClub">
+    
+    <form name="addClub">
       <div layout="column">
-      <div style="height:50px"></div>
-      <!--Club Name-->
-      <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-      <md-input-container>
-      <label>Club Name</label>
-      <input type="text" ng-model="club.name" required>
-      <div class="error" ng-show="addClub.clubName.$error.required" style="">Club name is required</div> 
-      </md-input-container>
-      </div>
-      <div flex></div>
+        <div style="height:50px"></div>
+        <!--Club Name-->
+        <div layout="row">
+          <div flex="20"></div>
+          <div flex="40">
+            <md-input-container>
+            <label>Club Name</label>
+            <input type="text" name="clubName" ng-model="club.name" required> 
+          </md-input-container>
+        </div>
+        <div flex></div>
       </div>
 
-      
+
       <!---->
       <!--Club Description-->
       <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-      <md-input-container flex>
-        <label>Club Description</label>
-        <textarea ng-model="club.description" columns="1" ></textarea>
-      </md-input-container>
+        <div flex="20"></div>
+        <div flex="40">
+          <md-input-container flex>
+          <label>Club Description</label>
+          <textarea ng-model="club.description" columns="1" ></textarea>
+        </md-input-container>
       </div>
       <div flex></div>
+    </div>
+    <!---->
+  </form>   
+  <!--Submit-->
+  <div layout="row">
+    <div flex="50"></div>
+    <md-button class="md-raised" ng-click="addConvenors=true">Add convenor</md-button>
+  </div>
+   </div>
+
+   <div ng-show="addConvenors">
+    <form name="addConvenor">
+      <div layout="column">
+        <div style="height:50px"></div>
+
+        <!--Convenor Name-->
+        <div layout="row">
+          <div flex="20"></div>
+          <div flex="40">
+            <md-input-container>
+            <label>Convenor name</label>
+            <input type="text" ng-model="convenor.name" required name="convenorName">
+          </md-input-container>
+        </div>
+        <div flex></div>
       </div>
       <!---->
-   </form>   
-      <!--Submit-->
+      <!--Convenor Roll No-->
       <div layout="row">
-      <div flex="45"></div>
-      <md-button class="md-raised" ng-click=addClub(club) ng-disabled="addClub.clubName.$error.required">Submit</md-button>
-      <md-button class="md-raised" ng-disabled="addClub.clubName.$error.required">Add convenors</md-button>
+        <div flex="20"></div>
+        <div flex="40">
+          <md-input-container>
+          <label>Convenor Roll No</label>
+          <input type="text" ng-model="convenor.roll_no" required name="convenorRollNo">
+        </md-input-container>
       </div>
-      </div>
-
+      <div flex></div>
+    </div>
+    <!---->
+  </form>
+  <!--Submit-->
+  <div layout="row">
+    <div flex="50"></div>
+    <md-button class="md-raised" ng-click="addConvenor(convenor);reset()" ng-disabled="addConvenor.convenorName.$error.required||addConvenor.convenorRollNo.$error.required||addClub.clubName.$error.required" >Submit</md-button>
   </div>
+</div>
+</div>
+</div>
 
-  <div ng-switch-when="addConvenor">
-          <!--Add convenors-->
-      <div layout="column">
+
+
+
+<div ng-switch-when="addConvenor">
+  <!--Add convenors-->
+  <form name="addConvenor">
+    <div layout="column">
       <div style="height:50px"></div>
 
-       <!--Convenor Name-->
-       <div layout="row">
+      <!--Convenor Name-->
+      <div layout="row">
         <div flex="20"></div>
         <div flex="40">
           <md-input-container>
           <label>Convenor name</label>
-          <input type="text" ng-model="convenor_name" required>
+          <input type="text" ng-model="convenor.name" required name="convenorName">
         </md-input-container>
       </div>
       <div flex></div>
@@ -128,35 +172,37 @@
       <div flex="40">
         <md-input-container>
         <label>Convenor Roll No</label>
-        <input type="text" ng-model="convenor_roll_no" required>
+        <input type="text" ng-model="convenor.roll_no" required name="convenorRollNo">
       </md-input-container>
     </div>
     <div flex></div>
-    </div>
-    <!---->
-    <!--Submit-->
-    <div layout="row">
-      <div flex="50"></div>
-      <md-button class="md-raised">Submit</md-button>
-      
-
-    </div>
-    <!---->
   </div>
+  <!---->
+</form>
+<!--Submit-->
+<div layout="row">
+  <div flex="50"></div>
+  <md-button class="md-raised" ng-click=addConvenor(convenor) ng-disabled="addConvenor.convenorName.$error.required||addConvenor.convenorRollNo.$error.required">Submit</md-button>
+
+
+</div>
+<!---->
+</div>
 </div>
 
 <div ng-switch-when="addLitsocEvent">
-          <!--Add Litsoc Event-->
-      <div layout="column">
+  <form name="addLitsocEvent">
+    <!--Add Litsoc Event-->
+    <div layout="column">
       <div style="height:50px"></div>
 
-       <!--Event Name-->
-       <div layout="row">
+      <!--Event Name-->
+      <div layout="row">
         <div flex="20"></div>
         <div flex="40">
           <md-input-container>
           <label>Event name</label>
-          <input type="text" ng-model="event_name" required>
+          <input type="text" ng-model="event.name" required name="eventName">
         </md-input-container>
       </div>
       <div flex></div>
@@ -167,39 +213,41 @@
       <div flex="20"></div>
       <div flex="40">
         <md-input-container>
-          <label>Event date</label>
-          <input type="date" ng-model="event_date" min="01-08-2015" max="31-12-2016">
-        </md-input-container>
+        <label>Event date</label>
+        <input type="date" ng-model="event.date" name="eventDate" min="01-08-2015" max="31-12-2016" required>
+      </md-input-container>
     </div>
     <div flex></div>
-    </div>
-    <!---->
-    <!--Submit-->
-    <div layout="row">
-      <div flex="50"></div>
-      <md-button class="md-raised">Submit</md-button>
-      
-    </div>
-    <!---->
   </div>
+</form>
+<!---->
+<!--Submit-->
+<div layout="row">
+  <div flex="50"></div>
+  <md-button class="md-raised" ng-disabled="addLitsocEvent.eventName.$error.required||addLitsocEvent.eventDate.$error.required" ng-click=addLitsocEvent(event)>Submit</md-button>
+
+</div>
+<!---->
+</div>
 </div>
 
 <div ng-switch-when="ChangePassword">
-          <!--Change Password-->
-      <div layout="column">
+  <!--Change Password-->
+  <form name="changePassword">
+    <div layout="column">
       <div style="height:50px"></div>
 
-    
-    <!--New Password-->
-    <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-        <md-input-container>
+
+      <!--New Password-->
+      <div layout="row">
+        <div flex="20"></div>
+        <div flex="40">
+          <md-input-container>
           <label>New Password</label>
-          <input type="password" ng-model="new_password" required>
+          <input type="password" ng-model="new_password" name="newPassword" required>
         </md-input-container>
-    </div>
-    <div flex></div>
+      </div>
+      <div flex></div>
     </div>
     <!---->
     <!-- Confirm Password -->
@@ -207,17 +255,24 @@
       <div flex="20"></div>
       <div flex="40">
         <md-input-container>
-          <label>Confirm Password</label>
-          <input type="password" ng-model="confirm_password" required>
-        </md-input-container>
+        <label>Confirm Password</label>
+        <input type="password" ng-model="confirm_password" name="confirmPassword" required compare="new_password">
+        <div class="error" ng-show="changePassword.confirmPassword.$error.compare">Passwords dont match</div>
+
+      </md-input-container>
+
     </div>
     <div flex></div>
-    </div>
-    <!--Submit-->
-    <div layout="row">
-      <div flex="50"></div>
-      <md-button class="md-raised">Submit</md-button>
-      </div>
-    <!---->
   </div>
+
+</div>
+
+</form>
+<!--Submit-->
+<div layout="row">
+  <div flex="50"></div>
+  <md-button class="md-raised" ng-disabled="changePassword.newPassword.$error.required||changePassword.confirmPassword.$error.required||changePassword.confirmPassword.$error.compare" ng-click='changePassword(new_password)'>Submit</md-button>
+</div>
+<!---->
+</div>
 </div>

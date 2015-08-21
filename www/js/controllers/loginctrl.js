@@ -1,6 +1,6 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial','ngStorage']);
 
-var server = 'http://192.168.0.6:9000/';
+var server = 'http://192.168.0.11:9000/';
 
 app.config(function ($routeProvider){
   $routeProvider
@@ -41,7 +41,28 @@ app.service('userService', function() {
   };
 
 });
+var compare = function() {
+    return {
+        require: "ngModel",
+        restrict: 'A',
+        scope: {
+            otherModelValue: "=compare"
+        },
+        link: function(scope, element, attributes, ngModel) {
+          console.log(scope, element);
+            
+            ngModel.$validators.compare = function(modelValue) {
+                return modelValue == scope.otherModelValue;
+            };
+ 
+            scope.$watch("otherModelValue", function() {
+                ngModel.$validate();
+            });
+        }
+    };
+};
 
+app.directive("compare", compare);
 app.controller('LoginCtrl', function($scope, $http, $location, userService,  $localStorage) {
   $scope.login = function(){
     var username = $scope.username;
@@ -98,5 +119,7 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
         console.log(response.data.errors);
       });
   }
+
+  
 
 });
