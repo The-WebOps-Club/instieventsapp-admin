@@ -63,7 +63,6 @@
 </div>
 <div ng-switch on="action">
 
-<<<<<<< HEAD
   <div class="row" ng-switch-when="home">
     <div class="col-lg-12">
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in events">
@@ -73,10 +72,8 @@
   </div>
 
   <!-- Adding new club -->
-=======
->>>>>>> d58d14a7f261cfc35f0f9fb9a8adeaa9c293b9ca
   <div ng-switch-when="addClub" >
-  <form name="addClub">
+  <form >
       <div layout="column">
       <div style="height:50px"></div>
       <!--Club Name-->
@@ -149,7 +146,7 @@
       <div flex="40">
         <md-input-container>
         <label>Convenor Roll No</label>
-        <input type="text" ng-model="convenor.rollNo" required>
+        <input type="text" ng-model="convenor.rollNumber" required>
       </md-input-container>
     </div>
     <div flex></div>

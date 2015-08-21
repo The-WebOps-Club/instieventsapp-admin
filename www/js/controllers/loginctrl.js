@@ -1,6 +1,6 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial','ngStorage']);
 
-var server = 'http://192.168.0.6:9000/';
+var server = 'http://10.21.209.192:9000/';
 
 app.config(function ($routeProvider){
   $routeProvider
@@ -143,7 +143,24 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
   }
 
   $scope.addConvenor = function(convenor){
-    console.log(convenor);
+    convenor.password="asdf";
+    var req = {
+     method: 'POST',
+     url: server + 'api/admins/addConvenor',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data : convenor
+    }
+    $http(req).then(function(response){
+        alert('successfully added');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
   }
 
 });
