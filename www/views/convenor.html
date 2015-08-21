@@ -18,26 +18,21 @@
   <md-list>
     <md-subheader class="md-no-sticky"></md-subheader>
     <md-list-item>
-      <md-button class="md-primary" ng-click="action='addClub'">Add club</md-button>
+      <md-button class="md-primary" ng-click="action='editClubDetails'">Edit Club Details</md-button>
     </md-list-item>
     <md-list-item>
-      <md-button class="md-primary" ng-click="action='addConvenor'">Assign Convenors</md-button>
+      <md-button class="md-primary" ng-click="action='addClubEvents'">Add Club Events</md-button>
     </md-list-item>
-    <md-list-item>
-    <md-button class="md-primary" ng-click="action='addLitsocEvent'">Add Litsoc Events</md-button>
-    </md-list-item>
+    
     <md-divider></md-divider>
     <md-subheader class="md-no-sticky"></md-subheader>
     <md-list-item>
-      <md-button class="md-primary">Send push notifications</md-button>
+      <md-button class="md-primary" ng-click="action='changePassword'">Change Password</md-button>
     </md-list-item>
     <md-list-item>
-      <md-button class="md-primary" ng-click="action='ChangePassword'">Change Password</md-button>
+      <md-button class="md-primary" ng-click="logout()">Logout</md-button>
     </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="Logout()">Logout</md-button>
-      <div flex="5"></div>
-    </md-list-item>
+    
    </md-list>
   </md-content> 
 </md-sidenav>
@@ -50,7 +45,7 @@
         </md-button>
 
         <h2>
-          <span>Core</span>
+          <span>Convenor</span>
         </h2>
         <span flex=""></span>
         
@@ -62,9 +57,7 @@
  
 </div>
 <div ng-switch on="action">
-
-  <div ng-switch-when="addClub" >
-  <form name="addClub">
+  <div ng-switch-when="editClubDetails" >
       <div layout="column">
       <div style="height:50px"></div>
       <!--Club Name-->
@@ -73,14 +66,11 @@
       <div flex="40">
       <md-input-container>
       <label>Club Name</label>
-      <input type="text" ng-model="name" name="clubName" required >
-      <div class="error" ng-show="addClub.clubName.$error.required" style="">Club name is required</div> 
+      <input type="text" ng-model="name" required>
       </md-input-container>
       </div>
       <div flex></div>
       </div>
-
-      
       <!---->
       <!--Club Description-->
       <div layout="row">
@@ -94,59 +84,18 @@
       <div flex></div>
       </div>
       <!---->
-   </form>   
-      <!--Submit-->
+      <!--Submit/Reset-->
       <div layout="row">
-      <div flex="40"></div>
-      <md-button class="md-raised" type="submit" ng-disabled="addClub.clubName.$error.required">Submit</md-button>
-      <md-button class="md-raised" ng-disabled="addClub.clubName.$error.required">Add convenors</md-button>
-      </div>
-      </div>
-
-  </div>
-
-  <div ng-switch-when="addConvenor">
-          <!--Add convenors-->
-      <div layout="column">
-      <div style="height:50px"></div>
-
-       <!--Convenor Name-->
-       <div layout="row">
-        <div flex="20"></div>
-        <div flex="40">
-          <md-input-container>
-          <label>Convenor name</label>
-          <input type="text" ng-model="convenor_name" required>
-        </md-input-container>
-      </div>
-      <div flex></div>
-    </div>
-    <!---->
-    <!--Convenor Roll No-->
-    <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-        <md-input-container>
-        <label>Convenor Roll No</label>
-        <input type="text" ng-model="convenor_roll_no" required>
-      </md-input-container>
-    </div>
-    <div flex></div>
-    </div>
-    <!---->
-    <!--Submit-->
-    <div layout="row">
-      <div flex="50"></div>
+      <div flex="45"></div>
       <md-button class="md-raised">Submit</md-button>
-      
+      <md-button class="md-raised">Reset</md-button>
+      </div>
+      </div>
 
-    </div>
-    <!---->
   </div>
-</div>
 
-<div ng-switch-when="addLitsocEvent">
-          <!--Add Litsoc Event-->
+<div ng-switch-when="addClubEvents">
+          <!--Add  Event-->
       <div layout="column">
       <div style="height:50px"></div>
 
@@ -174,11 +123,12 @@
     <div flex></div>
     </div>
     <!---->
-    <!--Submit-->
+    <!--Submit/Reset-->
     <div layout="row">
-      <div flex="50"></div>
+      <div flex="45"></div>
       <md-button class="md-raised">Submit</md-button>
-      
+      <md-button class="md-raised" ng-click="reset()">Reset</md-button>
+
     </div>
     <!---->
   </div>
