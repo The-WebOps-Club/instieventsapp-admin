@@ -1,10 +1,8 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial','ngStorage']);
 
-<<<<<<< HEAD
-var server = 'http://192.168.0.11:9000/';
-=======
-var server = 'http://10.21.209.192:9000/';
->>>>>>> d68ef45003262edef6a86b68c278c6fe6d70ade1
+
+var server = 'http://10.21.210.107:9000/';
+
 
 app.config(function ($routeProvider){
   $routeProvider
@@ -45,6 +43,7 @@ app.service('userService', function() {
   };
 
 });
+
 var compare = function() {
     return {
         require: "ngModel",
