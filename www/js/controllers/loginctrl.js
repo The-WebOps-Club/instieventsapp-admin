@@ -166,9 +166,9 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
       });
   }
 
-  $scope.editEvent = function(){
+  $scope.editEvent = function(event){
     $scope.action = 'editEvent';
-    console.log("clciced");
+    $scope.currentEvent = event;
   }
 
   $scope.addConvenor = function(convenor){
@@ -193,7 +193,7 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
   }
 
   $scope.convenors = [];
-  $scope.addConvenor = function(newConvenor){
+  $scope.pushConvenor = function(newConvenor){
     $scope.convenors.push(angular.copy(newConvenor));
   }
 
