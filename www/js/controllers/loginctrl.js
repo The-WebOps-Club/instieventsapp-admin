@@ -121,6 +121,7 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
 
 
   $scope.addClub = function(club){
+    club.convenors = $scope.convenors;
     var req = {
      method: 'POST',
      url: server + 'api/clubs',
@@ -128,11 +129,10 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
        'Authorization': 'Bearer ' + $localStorage.token,
        'Content-Type' : 'application/json'
      },
-     data: { 'name' : club.name, 
-      'description' : club.description 
-     }
+     data: club
     }
     $http(req).then(function(response){
+        console.log(response);
         alert('successfully added');
       }, 
       function(response){
@@ -161,6 +161,11 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
           $location.path('login');
         } else alert(response.data.errors.message);
       });
+  }
+
+  $scope.convenors = [];
+  $scope.addConvenor = function(newConvenor){
+    $scope.convenors.push(angular.copy(newConvenor));
   }
 
 });

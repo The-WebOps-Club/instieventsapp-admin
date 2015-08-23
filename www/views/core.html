@@ -65,14 +65,17 @@
 
   <div class="row" ng-switch-when="home">
     <div class="col-lg-12">
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in events">
-        <li><a href="#" tooltip="{{thing.name}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="event in events">
+        <li><a href="#" tooltip="{{event.name}}">{{event.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
       </ul>
     </div>
   </div>
 
   <!-- Adding new club -->
   <div ng-switch-when="addClub" >
+    <div ng-repeat="convenor in convenors">
+      {{ ($index + 1)+ convenor.name}}
+    </div>
   <form >
       <div layout="column">
       <div style="height:50px"></div>
@@ -88,8 +91,6 @@
       </div>
       <div flex></div>
       </div>
-
-      
       <!---->
       <!--Club Description-->
       <div layout="row">
@@ -103,12 +104,46 @@
       <div flex></div>
       </div>
       <!---->
+      <!--Convenor name-->
+      <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+      <md-input-container flex>
+        <label>Convenor name</label>
+        <textarea ng-model="convenor.name" columns="1" ></textarea>
+      </md-input-container>
+      </div>
+      <div flex></div>
+      </div>
+      <!--Convenor rollNumber-->
+      <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+      <md-input-container flex>
+        <label>Convenor email</label>
+        <textarea ng-model="convenor.email" columns="1" ></textarea>
+      </md-input-container>
+      </div>
+      <div flex></div>
+      </div>
+      <!---->
+      <!--Convenor name-->
+      <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+      <md-input-container flex>
+        <label>Convenor phone number</label>
+        <textarea ng-model="convenor.phoneNumber" columns="1" ></textarea>
+      </md-input-container>
+      </div>
+      <div flex></div>
+      </div>
    </form>   
       <!--Submit-->
       <div layout="row">
       <div flex="45"></div>
       <md-button class="md-raised" ng-click=addClub(club) ng-disabled="addClub.clubName.$error.required">Submit</md-button>
-      <md-button class="md-raised" ng-disabled="addClub.clubName.$error.required">Add convenors</md-button>
+      <md-button class="md-raised" ng-disabled="addClub.clubName.$error.required" ng-click='addConvenor(convenor)'>Add convenors</md-button>
       </div>
       </div>
 
