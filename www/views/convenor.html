@@ -1,173 +1,173 @@
 
-    <div class="header">
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-    md-component-id="left">
+<div class="header">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+  md-component-id="left">
   <md-toolbar layout="row">
-   <div class="md-toolbar-tools">
-        <h2>
-          <span>Side Panel</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
-          <md-tooltip>Close Side Panel</md-tooltip>
-          <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
-        </md-button>
-       </div>
-  </md-toolbar> 
-  <md-content layout-padding="">
-  <md-list>
-    <md-subheader class="md-no-sticky"></md-subheader>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='editClubDetails'">Edit Club Details</md-button>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='addClubEvents'">Add Club Events</md-button>
-    </md-list-item>
-    
-    <md-divider></md-divider>
-    <md-subheader class="md-no-sticky"></md-subheader>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="action='changePassword'">Change Password</md-button>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="md-primary" ng-click="logout()">Logout</md-button>
-    </md-list-item>
-    
-   </md-list>
-  </md-content> 
-</md-sidenav>
-  
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
-          <md-tooltip>Side Panel</md-tooltip>
-          <md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>
-        </md-button>
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>Side Panel</span>
+    </h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+    <md-tooltip>Close Side Panel</md-tooltip>
+    <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+  </md-button>
+</div>
+</md-toolbar> 
+<md-content layout-padding="">
+<md-list>
+<md-subheader class="md-no-sticky"></md-subheader>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='editClubDetails'">Edit Club Details</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='addClubEvents'">Add Club Events</md-button>
+</md-list-item>
 
-        <h2>
-          <span>Convenor</span>
-        </h2>
-        <span flex=""></span>
-        
-        <md-button class="md-icon-button" aria-label="More">
-         
-        </md-button>
-      </div>
-    </md-toolbar>
- 
+<md-divider></md-divider>
+<md-subheader class="md-no-sticky"></md-subheader>
+<md-list-item>
+<md-button class="md-primary" ng-click="action='changePassword'">Change Password</md-button>
+</md-list-item>
+<md-list-item>
+<md-button class="md-primary" ng-click="logout()">Logout</md-button>
+</md-list-item>
+
+</md-list>
+</md-content> 
+</md-sidenav>
+
+<md-toolbar>
+<div class="md-toolbar-tools">
+  <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+  <md-tooltip>Side Panel</md-tooltip>
+  <md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>
+</md-button>
+
+<h2>
+  <span>Convenor</span>
+</h2>
+<span flex=""></span>
+
+<md-button class="md-icon-button" aria-label="More">
+
+</md-button>
+</div>
+</md-toolbar>
+
 </div>
 <div ng-switch on="action">
   <div ng-switch-when="editClubDetails" >
-      <div layout="column">
+    <div layout="column">
       <div style="height:50px"></div>
       <!--Club Name-->
       <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-      <md-input-container>
-      <label>Club Name</label>
-      <input type="text" ng-model="name" required>
-      </md-input-container>
-      </div>
-      <div flex></div>
-      </div>
-      <!---->
-      <!--Club Description-->
-      <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-      <md-input-container flex>
-        <label>Club Description</label>
-        <textarea ng-model="club_description" columns="1"></textarea>
-      </md-input-container>
-      </div>
-      <div flex></div>
-      </div>
-      <!---->
-      <!--Submit/Reset-->
-      <div layout="row">
-      <div flex="45"></div>
-      <md-button class="md-raised">Submit</md-button>
-      <md-button class="md-raised">Reset</md-button>
-      </div>
-      </div>
-
-  </div>
-
-<div ng-switch-when="addClubEvents">
-          <!--Add  Event-->
-      <div layout="column">
-      <div style="height:50px"></div>
-
-       <!--Event Name-->
-       <div layout="row">
         <div flex="20"></div>
         <div flex="40">
           <md-input-container>
-          <label>Event name</label>
-          <input type="text" ng-model="event_name" required>
+          <label>Club Name</label>
+          <input type="text" ng-model="name" required>
         </md-input-container>
       </div>
       <div flex></div>
     </div>
     <!---->
-    <!--Event Date-->
+    <!--Club Description-->
+    <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+        <md-input-container flex>
+        <label>Club Description</label>
+        <textarea ng-model="club_description" columns="1"></textarea>
+      </md-input-container>
+    </div>
+    <div flex></div>
+  </div>
+  <!---->
+  <!--Submit/Reset-->
+  <div layout="row">
+    <div flex="45"></div>
+    <md-button class="md-raised">Submit</md-button>
+    <md-button class="md-raised">Reset</md-button>
+  </div>
+</div>
+
+</div>
+
+<div ng-switch-when="addClubEvents">
+  <!--Add  Event-->
+  <div layout="column">
+    <div style="height:50px"></div>
+
+    <!--Event Name-->
     <div layout="row">
       <div flex="20"></div>
       <div flex="40">
         <md-input-container>
-          <label>Event date</label>
-          <input type="date" ng-model="event_date" min="01-08-2015" max="31-12-2016">
-        </md-input-container>
+        <label>Event name</label>
+        <input type="text" ng-model="event_name" required>
+      </md-input-container>
     </div>
     <div flex></div>
-    </div>
-    <!---->
-    <!--Submit/Reset-->
-    <div layout="row">
-      <div flex="45"></div>
-      <md-button class="md-raised">Submit</md-button>
-      <md-button class="md-raised" ng-click="reset()">Reset</md-button>
-
-    </div>
-    <!---->
   </div>
+  <!---->
+  <!--Event Date-->
+  <div layout="row">
+    <div flex="20"></div>
+    <div flex="40">
+      <md-input-container>
+      <label>Event date</label>
+      <input type="date" ng-model="event_date" min="01-08-2015" max="31-12-2016">
+    </md-input-container>
+  </div>
+  <div flex></div>
+</div>
+<!---->
+<!--Submit/Reset-->
+<div layout="row">
+  <div flex="45"></div>
+  <md-button class="md-raised">Submit</md-button>
+  <md-button class="md-raised" ng-click="reset()">Reset</md-button>
+
+</div>
+<!---->
+</div>
 </div>
 
 <div ng-switch-when="ChangePassword">
-          <!--Change Password-->
-      <div layout="column">
-      <div style="height:50px"></div>
+  <!--Change Password-->
+  <div layout="column">
+    <div style="height:50px"></div>
 
-    
+
     <!--New Password-->
     <div layout="row">
       <div flex="20"></div>
       <div flex="40">
         <md-input-container>
-          <label>New Password</label>
-          <input type="password" ng-model="new_password" required>
-        </md-input-container>
+        <label>New Password</label>
+        <input type="password" ng-model="new_password" required>
+      </md-input-container>
     </div>
     <div flex></div>
-    </div>
-    <!---->
-    <!-- Confirm Password -->
-    <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-        <md-input-container>
-          <label>Confirm Password</label>
-          <input type="password" ng-model="confirm_password" required>
-        </md-input-container>
-    </div>
-    <div flex></div>
-    </div>
-    <!--Submit-->
-    <div layout="row">
-      <div flex="50"></div>
-      <md-button class="md-raised">Submit</md-button>
-      </div>
-    <!---->
   </div>
+  <!---->
+  <!-- Confirm Password -->
+  <div layout="row">
+    <div flex="20"></div>
+    <div flex="40">
+      <md-input-container>
+      <label>Confirm Password</label>
+      <input type="password" ng-model="confirm_password" required>
+    </md-input-container>
+  </div>
+  <div flex></div>
+</div>
+<!--Submit-->
+<div layout="row">
+  <div flex="50"></div>
+  <md-button class="md-raised">Submit</md-button>
+</div>
+<!---->
+</div>
 </div>
