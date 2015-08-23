@@ -1,5 +1,5 @@
 
-<div class="header">
+<div class="header" layout="column">
 <!-- Sidenav -->
    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
 <!-- Sidenav Toolbar -->
@@ -83,12 +83,23 @@
 		</div>
 <!-- Main view addClub -->
 	 <div ng-switch-when="addClub"  layout ="column">
-  		<div ng-repeat="convenor in convenors" layout="row">
-  		<md-card layout="column" layout-fill layout-padding layout-margin  flex="20">
+	 	<div layout="row">
+  		<div ng-repeat="convenor in convenors" layout-wrap>
+  		<md-card layout="column" layout-fill layout-padding layout-margin  flex="100">
+  		<div layout="row">
+  		<div flex="70"></div>
+  		<div>
+		  	<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor)'>
+		  	<md-tooltip>Remove Convenor</md-tooltip>
+			<md-icon md-svg-src="../css/clear.svg" class="s48"></md-icon>
+			</md-button>
+  		</div>
+  		</div>
   		<div>{{$index + 1}}. Name : {{convenor.name}}</div>
   		<div> Phone number : {{convenor.phoneNumber}}</div>
   		<div>Email : {{convenor.email}}</div>
   		</md-card>
+  		</div>
   		</div>
   		<form >
 	 		<div layout="column">
