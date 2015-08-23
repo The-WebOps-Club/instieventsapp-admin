@@ -71,12 +71,13 @@
     <md-card flex="25" flex-sm="100" flex-md="50" ng-repeat="event in events" >
     <div layout="column">
       <div layout="row">
-        <div flex="90"></div>
-        <md-icon class="md-fab md-primary">
-        <md-tooltip>Edit</md-tooltip>
-        <md-icon md-svg-src="../css/edit.svg" class="s48" aria-label="edit"></md-icon>
-      </md-icon>
-    </div>
+        <div flex="80"></div>
+              <md-button class="md-icon-button" aria-label="Edit" ng-click="action=editEvent()">
+    <md-tooltip>Edit</md-tooltip>
+    <md-icon md-svg-src="../css/edit.svg" class="s48" aria-label="Edit"></md-icon>
+    <!-- <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon> -->
+  </md-button>
+        </div>
   </div>
   <div flex='100'>
     Name : {{event.name}} <br>
@@ -166,6 +167,7 @@
 
   </div>
 
+
 <div ng-show="addConvenors">
   <form name="addConvenor">
     <div layout="column">
@@ -212,6 +214,27 @@
   <md-button class="md-raised" ng-click="addConvenor(convenor);reset()" ng-disabled="addConvenor.convenorName.$error.required||addConvenor.convenorRollNo.$error.required||addClub.clubName.$error.required" >Submit</md-button>
 </div>
 </div>
+</div>
+</div>
+
+
+<div ng-switch-when="editEvent">
+  <div layout="column">
+    <div style="height:50px"></div>
+    <div layout="row">
+      <div flex="20"></div>
+      <div flex="40">
+        <md-input-container>
+        <label>Name</label>
+        <input type="text"  required name="EventName">
+      </md-input-container>
+    </div>
+    <div flex></div>
+  </div>
+  <div layout="row">
+    <div flex="50"></div>
+    <md-button class="md-raised" ng-click=''>Submit</md-button>
+  </div>
 </div>
 </div>
 
@@ -263,17 +286,8 @@
 <div layout="row">
   <div flex="45"></div>
   <md-button class="md-raised" ng-click=addConvenor(convenor) >Submit</md-button>
-  <md-button class="md-raised" ng-click="reset()">Reset</md-button>
-
 </div>
-<!---->
-
 </div>
-<!---->
-</form>
-<!--Submit-->
-
-
 </div>
 
 <div ng-switch-when="addLitsocEvent">

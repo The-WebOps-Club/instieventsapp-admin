@@ -166,6 +166,11 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
       });
   }
 
+  $scope.editEvent = function(){
+    $scope.action = 'editEvent';
+    console.log("clciced");
+  }
+
   $scope.addConvenor = function(convenor){
     convenor.password="asdf";
     var req = {
