@@ -45,6 +45,7 @@ app.service('userService', function() {
 });
 
 var compare = function() {
+
     return {
         require: "ngModel",
         restrict: 'A',
@@ -66,6 +67,7 @@ var compare = function() {
 };
 
 app.directive("compare", compare);
+
 app.controller('LoginCtrl', function($scope, $http, $location, userService,  $localStorage) {
   $scope.login = function(){
     var username = $scope.username;
@@ -166,9 +168,37 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
       });
   }
 
+    $scope.addEvent = function(event){
+    
+    var req = {
+     method: 'POST',
+     url: server + 'api/events',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data: event
+    }
+    $http(req).then(function(response){
+        console.log(response);
+        alert('successfully added');
+      }, 
+      function(response){
+        console.log(response);
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
+
   $scope.editEvent = function(event){
     $scope.action = 'editEvent';
     $scope.currentEvent = event;
+  }
+
+    $scope.editClub = function(club){
+    $scope.action = 'editClub';
+    $scope.currentClub = club;
   }
 
   $scope.addConvenor = function(convenor){
@@ -200,6 +230,11 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
  $scope.removeConvenor = function(convenor) { 
   var index = $scope.convenors.indexOf(convenor);
   $scope.convenors.splice(index, 1);     
+}
+
+$scope.removeEvent = function(event) { 
+  var index = $scope.events.indexOf(event);
+  $scope.events.splice(index, 1);     
 }
 
 });

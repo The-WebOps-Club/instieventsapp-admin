@@ -4,3 +4,6 @@
 .error{
   color: #C00;
 }
+md-input-container md-select {
+    order: 2;
+}
