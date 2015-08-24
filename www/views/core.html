@@ -84,20 +84,20 @@
 <!-- Main view addClub -->
 	 <div ng-switch-when="addClub"  layout ="column">
 	 	<div layout="row">
-  		<div ng-repeat="convenor in convenors" layout-wrap>
+  		<div ng-repeat="convenor in convenors" layout-wrap ng-hide="removeConv">
   		<md-card layout="column" layout-fill layout-padding layout-margin  flex="100">
   		<div layout="row">
   		<div flex="70"></div>
   		<div>
-		  	<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor)'>
+		  	<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor);removeConv=1'>
 		  	<md-tooltip>Remove Convenor</md-tooltip>
 			<md-icon md-svg-src="../css/clear.svg" class="s48"></md-icon>
 			</md-button>
   		</div>
   		</div>
-  		<div>{{$index + 1}}. Name : {{convenor.name}}</div>
+  		<div> {{$index + 1}}. Name : {{convenor.name}}</div>
   		<div> Phone number : {{convenor.phoneNumber}}</div>
-  		<div>Email : {{convenor.email}}</div>
+  		<div> Email : {{convenor.email}}</div>
   		</md-card>
   		</div>
   		</div>
@@ -169,48 +169,7 @@
 		</div>
 	</div>
 
-	<div ng-show="addConvenors">
-  		<form>
-	 		<div layout="column">
-				<div style="height:50px"></div>
-<!--Convenor Name-->
-				<div layout="row">
-					<div flex="20"></div>
-		  			<div flex="40">
-<!-- Club name -->
-			 			<md-input-container>
-			 				<label>Club</label>
-			 				<md-select ng-model="convenor.club">
-			 					<md-option ng-repeat="club in clubs" value="{{club._id}}">{{club.name}}</md-option>
-		  					</md-select>
-						</md-input-container>
-						<md-input-container>
-							<label>Convenor name</label>
-							<input type="text" ng-model="convenor.name" required></input>
-	 					</md-input-container>
-  					</div>
-  					<div flex></div>
-				</div>
-<!--Convenor Roll No-->
-				<div layout="row">
-  					<div flex="20"></div>
-  					<div flex="40">
-	 					<md-input-container>
-	 						<label>Convenor Roll No</label>
-	 						<input type="text" ng-model="convenor.rollNumber" required>
-  						</md-input-container>
-					</div>
-					<div flex></div>
-				</div>
-		</form>
-<!--Submit-->
-		<div layout="row">
-  			<div flex="50"></div>
-  			<md-button class="md-raised" ng-click="addConvenor(convenor);reset()"  >Submit</md-button>
-		</div>
-	</div>
-	</div>
-
+	
 	<div ng-switch-when="editEvent">
 	  	<div layout="column">
 	 		<div style="height:50px"></div>

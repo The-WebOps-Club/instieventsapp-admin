@@ -197,4 +197,9 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
     $scope.convenors.push(angular.copy(newConvenor));
   }
 
+ $scope.removeConvenor = function(convenor) { 
+  var index = $scope.convenors.indexOf(convenor);
+  $scope.convenors.splice(index, 1);     
+}
+
 });
