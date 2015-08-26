@@ -227,14 +227,68 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
     $scope.convenors.push(angular.copy(newConvenor));
   }
 
+    $scope.pushnewConvenor = function(newConvenor){
+    $scope.currentClub.convenors.push(angular.copy(newConvenor));
+  }
+
+
  $scope.removeConvenor = function(convenor) { 
   var index = $scope.convenors.indexOf(convenor);
   $scope.convenors.splice(index, 1);     
+}
+
+  $scope.removeExistingConvenor = function(convenor) { 
+  var index = $scope.currentClub.convenors.indexOf(convenor);
+  $scope.currentClub.convenors.splice(index, 1);     
 }
 
 $scope.removeEvent = function(event) { 
   var index = $scope.events.indexOf(event);
   $scope.events.splice(index, 1);     
 }
+  
+  $scope.updateClub = function(currentClub){
+    
+    var req = {
+     method: 'PUT',
+     url: server + 'api/clubs/'+ currentClub._id,
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data: currentClub
+    }
+    $http(req).then(function(response){
+        console.log(response);
+        alert('successfully updated');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
+
+  $scope.updateEvent = function(currentEvent){
+    
+    var req = {
+     method: 'PUT',
+     url: server + 'api/events/'+ currentEvent._id,
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data: currentEvent
+    }
+    $http(req).then(function(response){
+        console.log(response);
+        alert('successfully updated');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
 
 });

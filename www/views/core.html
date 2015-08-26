@@ -104,7 +104,7 @@
 		  						</div>
 		  						<div flex></div>
 		  						<div layout="row" layout-align="end center">
-		  							<md-button class="md-icon-button" aria-label="Edit" ng-click='action=editClub(club)'>
+		  							<md-button class="md-icon-button" aria-label="Edit" ng-click='editClub(club)'>
 		  							<md-tooltip>Edit</md-tooltip>
 		  							<md-icon md-svg-src="../css/edit.svg" class="s48" aria-label="Edit"></md-icon>
 									</md-button>
@@ -120,11 +120,11 @@
 		</div>
 <!-- Main view addClub -->
 	 <div ng-switch-when="addClub"  layout ="column">
-	 	<div layout="row">
+	 <!-- <div layout="row">
   		<div ng-repeat="convenor in convenors" layout-wrap ng-hide="removeConv">
   		<md-card layout="column" layout-fill layout-padding layout-margin  flex="100" layout-wrap>
   		<div layout="row">
-  		<div flex="70"></div>
+  		<div flex></div>
   		<div>
 		  	<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor);removeConv=1'>
 		  	<md-tooltip>Remove Convenor</md-tooltip>
@@ -137,7 +137,26 @@
   		<div> Email : {{convenor.email}}</div>
   		</md-card>
   		</div>
-  		</div>
+  		</div> -->
+
+	 	<div layout= "row" layout-wrap layout-fill layout-padding layout-margin ng-hide="removeConv">
+	 		<md-card layout="column" ng-repeat="convenor in convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+	 		<div layout="row">
+	 			<div layout="column" flex>
+					<div> {{$index + 1}}. Name : {{convenor.name}}</div>
+  					<div> Phone number : {{convenor.phoneNumber}}</div>
+  					<div> Email : {{convenor.email}}</div>
+	 			</div>
+	 			<div>
+	 				<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor);removeConv=1'>
+		  			<md-tooltip>Remove Convenor</md-tooltip>
+					<md-icon md-svg-src="../css/clear.svg" class="s48"></md-icon>
+					</md-button>
+	 			</div>
+	 		</div>
+	 		</md-card>
+	 		</div>
+	 	
   		<form >
 	 		<div layout="column">
 				<div style="height:50px"></div>
@@ -201,8 +220,8 @@
 <!--Submit-->
 		<div layout="row">
   			<div flex="45"></div>
-  			<md-button class="md-raised" ng-click=addClub(club) ng-disabled="addClub.clubName.$error.required">Submit</md-button>
-  			<md-button class="md-raised" ng-disabled="addClub.clubName.$error.required" ng-click='pushConvenor(convenor)'>Add convenors</md-button>
+  			<md-button class="md-raised" ng-click=addClub(club)>Submit</md-button>
+  			<md-button class="md-raised" ng-click='pushConvenor(convenor)'>Add convenors</md-button>
 		</div>
 	</div>
 
@@ -263,7 +282,7 @@
   			</div>
   			<div layout="row">
 	 			<div flex="50"></div>
-	 			<md-button class="md-raised" ng-click='removeEvent(currentEvent);addEvent(currentEvent)'>Submit</md-button>
+	 			<md-button class="md-raised" ng-click='updateEvent(currentEvent)'>Update</md-button>
   			</div>
 		</div>
 	</div>
@@ -420,25 +439,28 @@
 </div>
 
 <div ng-switch-when="editClub">
-	<div layout="row">
-  		<div ng-repeat="convenor in currentClub.convenors" layout-wrap ng-hide="removeConv">
-  		<md-card layout="column" layout-fill layout-padding layout-margin  flex="100" layout-wrap>
-  		<div layout="row">
-  		<div flex="70"></div>
-  		<div>
-		  	<md-button class="md-icon-button" ng-click='action=removeConvenor(convenor);removeConv=1'>
-		  	<md-tooltip>Remove Convenor</md-tooltip>
-			<md-icon md-svg-src="../css/clear.svg" class="s48"></md-icon>
-			</md-button>
-  		</div>
-  		</div>
-  		<div> {{$index + 1}}. Name : {{convenor.name}}</div>
-  		<div> Phone number : {{convenor.phoneNumber}}</div>
-  		<div> Email : {{convenor.email}}</div>
-  		</md-card>
-  		</div>
-  		</div>
-  		<form >
+	
+ 	<div layout= "row" layout-wrap layout-fill layout-padding layout-margin ng-hide="removeConv">
+	 		<md-card layout="column" ng-repeat="convenor in currentClub.convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+	 		<div layout="row">
+	 			<div layout="column" flex>
+					<div> {{$index + 1}}. Name : {{convenor.name}}</div>
+  					<div> Phone number : {{convenor.phoneNumber}}</div>
+  					<div> Email : {{convenor.email}}</div>
+	 			</div>
+	 			<div>
+	 				<md-button class="md-icon-button" ng-click='removeExistingConvenor(convenor);removeConv=1'>
+		  			<md-tooltip>Remove Convenor</md-tooltip>
+					<md-icon md-svg-src="../css/clear.svg" class="s48"></md-icon>
+					</md-button>
+	 			</div>
+	 		</div>
+	 		</md-card>
+	 		</div>
+	 	
+
+
+ 	<form >
 	 		<div layout="column">
 				<div style="height:50px"></div>
 				<!--Club Name-->
@@ -469,7 +491,7 @@
 	 				<div flex="40">
 						<md-input-container flex>
 							<label>Convenor name</label>
-							<input ng-model="convenor.name" type="text" columns="1" ></input>
+							<input ng-model="newConvenor.name" type="text" columns="1" ></input>
 	 					</md-input-container>
   					</div>
   					<div flex></div>
@@ -480,7 +502,7 @@
   					<div flex="40">
 	 					<md-input-container flex>
 	 						<label>Convenor email</label>
-	 						<input ng-model="convenor.email" type="email" columns="1" ></input>
+	 						<input ng-model="newConvenor.email" type="email" columns="1" ></input>
   						</md-input-container>
 					</div>
 					<div flex></div>
@@ -491,7 +513,7 @@
   					<div flex="40">
 	 					<md-input-container flex>
 	 						<label>Convenor phone number</label>
-	 						<input ng-model="convenor.phoneNumber" columns="1" ></input>
+	 						<input ng-model="newConvenor.phoneNumber" columns="1" ></input>
   						</md-input-container>
 					</div>
 					<div flex></div>
@@ -501,8 +523,8 @@
 <!--Submit-->
 		<div layout="row">
   			<div flex="45"></div>
-  			<md-button class="md-raised" ng-click=addClub(club) ng-disabled="addClub.clubName.$error.required">Submit</md-button>
-  			<md-button class="md-raised" ng-disabled="addClub.clubName.$error.required" ng-click='pushConvenor(convenor)'>Add convenors</md-button>
+  			<md-button class="md-raised" ng-click=updateClub(currentClub)>Update</md-button>
+  			<md-button class="md-raised" ng-click=pushnewConvenor(newConvenor)>Add convenors</md-button>
 		</div>
 	</div>
 
