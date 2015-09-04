@@ -1,7 +1,7 @@
 var app = angular.module('MyApp', ['ngRoute', 'ngMaterial','ngStorage']);
 
 
-var server = 'http://127.0.0.1:9000/';
+var server = 'http://litsoc.saarang.org/';
 
 
 app.config(function ($routeProvider){
@@ -9,7 +9,7 @@ app.config(function ($routeProvider){
   .when('/index',
   {
     controller:'CoreCtrl',
-    templateUrl:'views/core.html'
+    templateUrl:'views/convenor.html'
     })
   .when('/login',
   {
@@ -44,29 +44,8 @@ app.service('userService', function() {
 
 });
 
-var compare = function() {
 
-    return {
-        require: "ngModel",
-        restrict: 'A',
-        scope: {
-            otherModelValue: "=compare"
-        },
-        link: function(scope, element, attributes, ngModel) {
-          console.log(scope, element);
-            
-            ngModel.$validators.compare = function(modelValue) {
-                return modelValue == scope.otherModelValue;
-            };
- 
-            scope.$watch("otherModelValue", function() {
-                ngModel.$validate();
-            });
-        }
-    };
-};
 
-app.directive("compare", compare);
 
 app.controller('LoginCtrl', function($scope, $http, $location, userService,  $localStorage) {
   $scope.login = function(){
@@ -202,7 +181,12 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
   }
 
   $scope.addConvenor = function(convenor){
-    convenor.password="asdf";
+    convenor.password="";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+    for( var i=0; i < 6; i++ )
+        convenor.password += possible.charAt(Math.floor(Math.random() * possible.length));
+    console.log(convenor);
     var req = {
      method: 'POST',
      url: server + 'api/admins/addConvenor',
@@ -211,6 +195,59 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
        'Content-Type' : 'application/json'
      },
      data : convenor
+    }
+    $http(req).then(function(response){
+        alert('successfully added');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
+
+   $scope.addCore = function(core){
+    core.password="";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+    for( var i=0; i < 6; i++ )
+        core.password += possible.charAt(Math.floor(Math.random() * possible.length));
+    console.log(core);
+    var req = {
+     method: 'POST',
+     url: server + 'api/admins/sec/core',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data : core
+    }
+    $http(req).then(function(response){
+        alert('successfully added');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
+
+  $scope.addSec = function(sec){
+
+    sec.password="";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+    for( var i=0; i < 6; i++ )
+        sec.password += possible.charAt(Math.floor(Math.random() * possible.length));
+    console.log(sec);
+    var req = {
+     method: 'POST',
+     url: server + 'api/admins/sec/sec',
+     headers: {
+       'Authorization': 'Bearer ' + $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data : sec
     }
     $http(req).then(function(response){
         alert('successfully added');
@@ -253,7 +290,7 @@ $scope.removeEvent = function(event) {
      method: 'PUT',
      url: server + 'api/clubs/'+ currentClub._id,
      headers: {
-       'Authorization': 'Bearer ' + $localStorage.token,
+       'Authorization': 'Bearer '+ $localStorage.token,
        'Content-Type' : 'application/json'
      },
      data: currentClub
@@ -275,7 +312,7 @@ $scope.removeEvent = function(event) {
      method: 'PUT',
      url: server + 'api/events/'+ currentEvent._id,
      headers: {
-       'Authorization': 'Bearer ' + $localStorage.token,
+       'Authorization': 'Bearer '+ $localStorage.token,
        'Content-Type' : 'application/json'
      },
      data: currentEvent
@@ -283,6 +320,28 @@ $scope.removeEvent = function(event) {
     $http(req).then(function(response){
         console.log(response);
         alert('successfully updated');
+      }, 
+      function(response){
+        if (response.status == 401){
+          $location.path('login');
+        } else alert(response.data.errors.message);
+      });
+  }
+
+  $scope.changePassword = function(newPassword){
+    
+    var req = {
+     method: 'PUT',
+     url: server + '/api/admins/' + $localStorage.user._id + '/password',
+     headers: {
+       'Authorization': 'Bearer '+ $localStorage.token,
+       'Content-Type' : 'application/json'
+     },
+     data: newPassword
+    }
+    $http(req).then(function(response){
+        console.log(response);
+        alert('successfully changed');
       }, 
       function(response){
         if (response.status == 401){

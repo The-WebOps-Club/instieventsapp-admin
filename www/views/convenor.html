@@ -20,6 +20,9 @@
 <md-list>
 <md-subheader class="md-no-sticky"></md-subheader>
 <md-list-item>
+<md-button class="md-primary" ng-click="action='home';closeSideNavPanel()">Home</md-button>
+</md-list-item>
+<md-list-item>
 <md-button class="md-primary" ng-click="action='editClubDetails'">Edit Club Details</md-button>
 </md-list-item>
 <md-list-item>
@@ -29,10 +32,10 @@
 <md-divider></md-divider>
 <md-subheader class="md-no-sticky"></md-subheader>
 <md-list-item>
-<md-button class="md-primary" ng-click="action='changePassword'">Change Password</md-button>
+<md-button class="md-primary" ng-click="action='ChangePassword'">Change Password</md-button>
 </md-list-item>
 <md-list-item>
-<md-button class="md-primary" ng-click="logout()">Logout</md-button>
+<a href="../index.html"><md-button class="md-primary">Logout</md-button></a>
 </md-list-item>
 
 </md-list>
@@ -48,8 +51,8 @@
 
 <h2>
   <span>  <a ng-click="action='home'">
-    <!-- {{user.name}} -->Convenor
-    <a></span>
+    {{user.name}}
+    </a></span>
     </h2>
     <span flex=""></span>
 
@@ -60,56 +63,101 @@
 </div>
 <div ng-switch on="action">
 
+<div class="row" ng-switch-when="home" flex> 
 
-  <div class="row" ng-switch-when="home" layout="row" layout-wrap layout-margin layout-padding>
-    <md-card flex="25" flex-sm="100" flex-md="50" ng-repeat="event in events" >
-    <div flex='100'>
-<!-- Name : {{event.name}} <br>
-  Time : {{ event.time | date:'medium'}} -->
-</div>
-<div layout-align="end" layout="row" >
-  <md-button>
-  <md-tooltip>Edit</md-tooltip>
-  <md-icon md-svg-src="../css/edit.svg" class="s48" aria-label="edit"></md-icon>
-</md-button>
-</div>
-</md-card>
-</div>
+  <div layout-padding layout-margin><h1>Events</h1></div>
+      <div layout="row" layout-wrap layout-margin layout-padding flex="50">
+          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="event in events" >
+            
+                <div flex='100' layout-padding layout-margin layout="column">
+                <div layout="row">
+                  <div layout="column">
+                    <div>Name : {{event.name}}</div>
+                    <div>Time : {{event.time | date : 'medium'}}</div>
+                    <div>Venue : {{event.venue}} </div>
+                    <div>Description : {{event.description}}</div>
+                    
+                  </div>
+                  <div flex></div>
+                 
+                </div>
+
+              </div>
+          </md-card>
+      </div>
+    <div layout-padding layout-margin><h1>Clubs</h1></div>
+      
+      <div layout="row" layout-wrap layout-margin layout-padding flex="50">
+          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="club in clubs" >
+            
+              <div flex='100' layout-padding layout-margin layout="column">
+                <div layout="row">
+                  <div layout="column">
+                    <div>Name : {{club.name}}</div>
+                    <div>Description : {{club.description}}</div>
+                  </div>
+                  <div flex></div>
+                 
+                </div>
+                <div>
+                  Convenors : <div ng-repeat="convenor in club.convenors">{{$index +1}}. {{convenor.name}}</div>
+                </div>
+              
+              </div>
+          </md-card>
+      </div>
+    </div>
 
 
 <div ng-switch-when="editClubDetails" >
-  <div layout="column">
-    <div style="height:50px"></div>
-    <!--Club Name-->
+  <div layout= "row" layout-wrap layout-fill layout-padding layout-margin>
+      <md-card layout="column" ng-repeat="convenor in convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+      <div layout="row">
+        <div layout="column" flex>
+          <div> {{$index + 1}}. Name : {{convenor.name}}</div>
+            <div> Phone number : {{convenor.phoneNumber}}</div>
+            <div> Email : {{convenor.email}}</div>
+        </div>
+        
+      </div>
+      </md-card>
+      </div>
+    
+
+
+  <form >
+      <div layout="column">
+        <div style="height:50px"></div>
+        <!--Club Name-->
+        <div layout="row">
+            <div flex="20"></div>
+            <div flex="40">
+            <md-input-container>
+              <label>Club Name</label>
+              <input type="text" ng-model="user.club.name" required></input>
+              </md-input-container>
+          </div>
+          <div flex></div>
+        </div>
+   <!--Club Description-->
+        <div layout="row">
+          <div flex="20"></div>
+          <div flex="40">
+              <md-input-container flex>
+                <label>Club Description</label>
+                <textarea ng-model="user.club.description" columns="1" ></textarea>
+            </md-input-container>
+          </div>
+          <div flex></div>
+          </div>
+    </form>   
+<!--Submit-->
     <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-        <md-input-container>
-        <label>Club Name</label>
-        <input type="text" ng-model="name" required>
-      </md-input-container>
+        <div flex="50"></div>
+        <md-button class="md-raised" ng-click=updateClub(user.club)>Update</md-button>
+        
     </div>
-    <div flex></div>
   </div>
-  <!---->
-  <!--Club Description-->
-  <div layout="row">
-    <div flex="20"></div>
-    <div flex="40">
-      <md-input-container flex>
-      <label>Club Description</label>
-      <textarea ng-model="club_description" columns="1"></textarea>
-    </md-input-container>
-  </div>
-  <div flex></div>
-</div>
-<!---->
-<!--Submit/Reset-->
-<div layout="row">
-  <div flex="50"></div>
-  <md-button class="md-raised" ng-disabled="">Submit</md-button>
-</div>
-</div>
 
 </div>
 
@@ -124,7 +172,7 @@
       <div flex="40">
         <md-input-container>
         <label>Event name</label>
-        <input type="text" ng-model="event_name" required>
+        <input type="text" ng-model="currentEvent.name" required>
       </md-input-container>
     </div>
     <div flex></div>
@@ -136,7 +184,7 @@
     <div flex="40">
       <md-input-container>
       <label>Event date</label>
-      <input type="date" ng-model="event_date" min="01-08-2015" max="31-12-2016">
+      <input type="date" ng-model="currentEvent.date" min="01-08-2015" max="31-12-2016">
     </md-input-container>
   </div>
   <div flex></div>
@@ -145,47 +193,46 @@
 <!--Submit/Reset-->
 <div layout="row">
   <div flex="50"></div>
-  <md-button class="md-raised">Submit</md-button>
+  <md-button class="md-raised" ng-click=addEvent(currentEvent) >Submit</md-button>
 
 </div>
 <!---->
 </div>
 </div>
 
-
-<div ng-switch-when="changePassword">
+<div ng-switch-when="ChangePassword">
   <!--Change Password-->
   <div layout="column">
-    <div style="height:50px"></div>
+   <div style="height:50px"></div>
 
 
-    <!--New Password-->
-    <div layout="row">
-      <div flex="20"></div>
-      <div flex="40">
-        <md-input-container>
-        <label>New Password</label>
-        <input type="password" ng-model="new_password" required>
-      </md-input-container>
-    </div>
-    <div flex></div>
+   <!--New Password-->
+   <div layout="row">
+    <div flex="20"></div>
+    <div flex="40">
+      <md-input-container>
+      <label>Old Password</label>
+      <input type="password" ng-model="oldPassword" required>
+    </md-input-container>
+   </div>
+   <div flex></div>
   </div>
   <!---->
   <!-- Confirm Password -->
   <div layout="row">
-    <div flex="20"></div>
-    <div flex="40">
-      <md-input-container>
-      <label>Confirm Password</label>
-      <input type="password" ng-model="confirm_password" required>
-    </md-input-container>
+   <div flex="20"></div>
+   <div flex="40">
+    <md-input-container>
+    <label>New Password</label>
+    <input type="password" ng-model="newPassword" required>
+   </md-input-container>
   </div>
   <div flex></div>
 </div>
 <!--Submit-->
 <div layout="row">
   <div flex="50"></div>
-  <md-button class="md-raised">Submit</md-button>
+  <md-button class="md-raised" ng-click="changePassword(newPassword)">Submit</md-button>
 </div>
 <!---->
 </div>

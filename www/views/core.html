@@ -40,8 +40,8 @@
 		  <md-list-item>
 			 <md-button class="md-primary" ng-click="action='ChangePassword';closeSideNavPanel()">Change Password</md-button>
 		  </md-list-item>
-		  <md-list-item>
-			 <md-button class="md-primary" ng-click="Logout();closeSideNavPanel()">Logout</md-button>
+		<md-list-item>
+			 <a href="../index.html"><md-button class="md-primary">Logout</md-button></a>
 		  </md-list-item>
 		</md-list>
 	 </md-content> 
@@ -77,7 +77,7 @@
 		  							<div>Time : {{event.time | date : 'medium'}}</div>
 		  							<div>Venue : {{event.venue}} </div>
 		  							<div>Description : {{event.description}}</div>
-		  							<div>Details : {{event.details}}</div>
+		  							
 		  						</div>
 		  						<div flex></div>
 		  						<div layout="row" layout-align="end center">
@@ -411,8 +411,8 @@
 		<div flex="20"></div>
 		<div flex="40">
 		  <md-input-container>
-		  <label>New Password</label>
-		  <input type="password" ng-model="new_password" required>
+		  <label>Old Password</label>
+		  <input type="password" ng-model="oldPassword" required>
 		</md-input-container>
 	 </div>
 	 <div flex></div>
@@ -423,8 +423,8 @@
 	 <div flex="20"></div>
 	 <div flex="40">
 		<md-input-container>
-		<label>Confirm Password</label>
-		<input type="password" ng-model="confirm_password" required>
+		<label>New Password</label>
+		<input type="password" ng-model="newPassword" required>
 	 </md-input-container>
   </div>
   <div flex></div>
@@ -432,7 +432,7 @@
 <!--Submit-->
 <div layout="row">
   <div flex="50"></div>
-  <md-button class="md-raised">Submit</md-button>
+  <md-button class="md-raised" ng-click="changePassword(newPassword)">Submit</md-button>
 </div>
 <!---->
 </div>
