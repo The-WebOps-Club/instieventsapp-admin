@@ -27,6 +27,9 @@
 			 <md-button class="md-primary" ng-click="action='addClub';closeSideNavPanel()">Add club</md-button>
 		  </md-list-item>
 		  <md-list-item>
+			 <md-button class="md-primary" ng-click="action='updateScores';closeSideNavPanel()">Update Scores</md-button>
+		  </md-list-item>
+		  <md-list-item>
 			 <md-button class="md-primary" ng-click="action='addConvenor';closeSideNavPanel()">Assign Convenors</md-button>
 		  </md-list-item>
 		  <md-list-item>
@@ -433,6 +436,55 @@
 <div layout="row">
   <div flex="50"></div>
   <md-button class="md-raised" ng-click="changePassword(newPassword)">Submit</md-button>
+</div>
+<!---->
+</div>
+</div>
+
+<div ng-switch-when = "updateScores">
+	<!-- <div layout="column">
+	 <div style="height:50px"></div>
+
+	<div ng-repeat="hostel in hostels">
+	
+	 <div layout="row">
+		<div flex="20"></div>
+		<div flex="20">
+		  {{hostel}} : 
+	 	</div>
+	 
+  	 </div>
+	 <div flex="10">
+		<md-input-container>
+		<label>New Score</label>
+		<input type="number" ng-model="hostel.score" required>
+	 </md-input-container>
+  </div>
+  <div flex></div>
+</div>
+</div> -->
+<!--Submit-->
+<div style="height:50px"></div>
+<div layout="row">
+	<div flex="30"></div>
+	<div><h3>Scorecard</h3></div>
+</div>
+<div layout='column' ng-repeat="hostel in hostels">
+	<div layout="row">
+		<div flex="30"></div>
+		<div flex="20">
+			<md-input-container>
+			<label>{{hostel}}</label>
+			<input type="number" ng-model="hostel.score" required>
+			</md-input-container>
+		</div>
+		<div flex="50"></div>
+	</div>
+</div>
+
+<div layout="row">
+  <div flex="40"></div>
+  <md-button class="md-raised" ng-click="updateScores()">Submit</md-button>
 </div>
 <!---->
 </div>

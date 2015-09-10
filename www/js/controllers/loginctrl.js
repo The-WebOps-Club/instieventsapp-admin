@@ -9,7 +9,8 @@ app.config(function ($routeProvider){
   .when('/index',
   {
     controller:'CoreCtrl',
-    templateUrl:'views/convenor.html'
+    templateUrl: 'views/core.html'
+    // templateUrl:'views/' + '{{user.role.name}}' + '.html'
     })
   .when('/login',
   {
@@ -124,6 +125,7 @@ app.controller('CoreCtrl', function($scope, $http, $location, $mdSidenav, userSe
         } else alert(response.data.errors.message);
       });
 
+  $scope.hostels = ["Alakananda","Brahmaputra","Bhadra","Cauvery","Ganga","Godavari","Jamuna","Krishna","Mahanadi","Mandakini","Narmada","Pampa","Sabarmathi","Saraswathi","Sarayu","Sharavathi","Sindhu","Tamiraparani","Tapti","Tunga"];
 
   $scope.addClub = function(club){
     club.convenors = $scope.convenors;
