@@ -44,7 +44,7 @@
 			 <md-button class="md-primary" ng-click="action='ChangePassword';closeSideNavPanel()">Change Password</md-button>
 		  </md-list-item>
 		<md-list-item>
-			 <a href="../index.html"><md-button class="md-primary">Logout</md-button></a>
+			 <a href="../index.html#/login"><md-button class="md-primary">Logout</md-button></a>
 		  </md-list-item>
 		</md-list>
 	 </md-content> 
@@ -71,7 +71,7 @@
 
 			<div layout-padding layout-margin><h1>Events</h1></div>
 			<div layout="row" layout-wrap layout-margin layout-padding flex="50">
-					<md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="event in events" >
+					<md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="event in events track by $index" >
 			 			
 		  					<div flex='100' layout-padding layout-margin layout="column">
 		  					<div layout="row">
@@ -97,7 +97,7 @@
 <div layout-padding layout-margin><h1>Clubs</h1></div>
 			
 			<div layout="row" layout-wrap layout-margin layout-padding flex="50">
-					<md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="club in clubs" >
+					<md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="club in clubs track by $index" >
 			 			
 		  				<div flex='100' layout-padding layout-margin layout="column">
 		  					<div layout="row">
@@ -114,7 +114,7 @@
 		  						</div>
 		  					</div>
 		  					<div>
-		  						Convenors : <div ng-repeat="convenor in club.convenors">{{$index +1}}. {{convenor.name}}</div>
+		  						Convenors : <div ng-repeat="convenor in club.convenors track by $index">{{$index +1}}. {{convenor.name}}</div>
 		  					</div>
 			 				
 		  				</div>
@@ -143,7 +143,7 @@
   		</div> -->
 
 	 	<div layout= "row" layout-wrap layout-fill layout-padding layout-margin ng-hide="removeConv">
-	 		<md-card layout="column" ng-repeat="convenor in convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+	 		<md-card layout="column" ng-repeat="convenor in convenors track by $index" layout-fill layout-padding layout-margin flex="20" layout-wrap>
 	 		<div layout="row">
 	 			<div layout="column" flex>
 					<div> {{$index + 1}}. Name : {{convenor.name}}</div>
@@ -302,7 +302,7 @@
 		  <md-input-container>
 		  <label>Club</label>
 		  <md-select ng-model="convenor.club">
-		  <md-option ng-repeat="club in clubs" value="{{club._id}}">{{club.name}}</md-option>
+		  <md-option ng-repeat="club in clubs track by $index" value="{{club._id}}">{{club.name}}</md-option>
 		  </md-select>
 	 	  </md-input-container>
   		</div>
@@ -442,34 +442,12 @@
 </div>
 
 <div ng-switch-when = "updateScores">
-	<!-- <div layout="column">
-	 <div style="height:50px"></div>
-
-	<div ng-repeat="hostel in hostels">
-	
-	 <div layout="row">
-		<div flex="20"></div>
-		<div flex="20">
-		  {{hostel}} : 
-	 	</div>
-	 
-  	 </div>
-	 <div flex="10">
-		<md-input-container>
-		<label>New Score</label>
-		<input type="number" ng-model="hostel.score" required>
-	 </md-input-container>
-  </div>
-  <div flex></div>
-</div>
-</div> -->
-<!--Submit-->
 <div style="height:50px"></div>
 <div layout="row">
 	<div flex="30"></div>
 	<div><h3>Scorecard</h3></div>
 </div>
-<div layout='column' ng-repeat="hostel in hostels">
+<div layout='column' ng-repeat="hostel in hostels track by $index">
 	<div layout="row">
 		<div flex="30"></div>
 		<div flex="20">
@@ -493,7 +471,7 @@
 <div ng-switch-when="editClub">
 	
  	<div layout= "row" layout-wrap layout-fill layout-padding layout-margin ng-hide="removeConv">
-	 		<md-card layout="column" ng-repeat="convenor in currentClub.convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+	 		<md-card layout="column" ng-repeat="convenor in currentClub.convenors track by $index" layout-fill layout-padding layout-margin flex="20" layout-wrap>
 	 		<div layout="row">
 	 			<div layout="column" flex>
 					<div> {{$index + 1}}. Name : {{convenor.name}}</div>

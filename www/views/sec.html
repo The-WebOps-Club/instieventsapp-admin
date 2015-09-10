@@ -23,28 +23,22 @@
 <md-button class="md-primary" ng-click="action='home';closeSideNavPanel()">Home</md-button>
 </md-list-item>
 <md-list-item>
-<md-button class="md-primary" ng-click="action='addNextYearSec'">Add next year Sec</md-button>
+<md-button class="md-primary" ng-click="action='addNextYearSec';closeSideNavPanel()">Add next year Sec</md-button>
 </md-list-item>
 <md-list-item>
-<md-button class="md-primary" ng-click="action='addCores'">Add Cores</md-button>
+<md-button class="md-primary" ng-click="action='addCores';closeSideNavPanel()">Add Cores</md-button>
 </md-list-item>
 
 <md-divider></md-divider>
 <md-subheader class="md-no-sticky">Reset Data</md-subheader>
 
-<md-list-item>
-<md-button class="md-primary" ng-click="action='removeConvenors'">Remove Convenors</md-button>
-</md-list-item>
+
 
 <md-list-item>
-<md-button class="md-primary" ng-click="action='markEventsAsNotActive'">Mark Events as Not Active</md-button>
-</md-list-item>
-
-<md-list-item>
-<md-button class="md-primary" ng-click="action='ChangePassword'">Change Password</md-button>
+<md-button class="md-primary" ng-click="action='ChangePassword';closeSideNavPanel()">Change Password</md-button>
 </md-list-item>
 <md-list-item>
-<a href="../index.html"><md-button class="md-primary">Logout</md-button></a>
+<a href="../index.html#/login"><md-button class="md-primary">Logout</md-button></a>
 </md-list-item>
 
 </md-list>
@@ -77,7 +71,7 @@
 
   <div layout-padding layout-margin><h1>Events</h1></div>
       <div layout="row" layout-wrap layout-margin layout-padding flex="50">
-          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="event in events" >
+          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="event in events track by $index" >
             
                 <div flex='100' layout-padding layout-margin layout="column">
                 <div layout="row">
@@ -98,7 +92,7 @@
     <div layout-padding layout-margin><h1>Clubs</h1></div>
       
       <div layout="row" layout-wrap layout-margin layout-padding flex="50">
-          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="club in clubs" >
+          <md-card flex="30" flex-sm="100" flex-md="50" ng-repeat="club in clubs track by $index" >
             
               <div flex='100' layout-padding layout-margin layout="column">
                 <div layout="row">
@@ -110,7 +104,7 @@
                  
                 </div>
                 <div>
-                  Convenors : <div ng-repeat="convenor in club.convenors">{{$index +1}}. {{convenor.name}}</div>
+                  Convenors : <div ng-repeat="convenor in club.convenors track by $index">{{$index +1}}. {{convenor.name}}</div>
                 </div>
               
               </div>
@@ -177,7 +171,7 @@
     <div flex="20"></div>
     <div flex="40">
       <md-input-container>
-      <label>Core Roll No date</label>
+      <label>Core Roll No</label>
       <input type="text" ng-model="core.rollNumber">
     </md-input-container>
   </div>
@@ -197,7 +191,7 @@
 <div ng-switch-when="removeConvenors">
 
   <div layout= "row" layout-wrap layout-fill layout-padding layout-margin ng-hide="removeConv">
-      <md-card layout="column" ng-repeat="convenor in convenors" layout-fill layout-padding layout-margin flex="20" layout-wrap>
+      <md-card layout="column" ng-repeat="convenor in convenors track by $index" layout-fill layout-padding layout-margin flex="20" layout-wrap>
       <div layout="row">
         <div layout="column" flex>
           <div> {{$index + 1}}. Name : {{convenor.name}}</div>
