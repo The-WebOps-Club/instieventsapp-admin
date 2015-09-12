@@ -134,7 +134,7 @@
             <div flex="40">
             <md-input-container>
               <label>Club Name</label>
-              <input type="text" ng-model="user.club.name" required></input>
+              <input type="text" ng-model="user.role.club.name" required></input>
               </md-input-container>
           </div>
           <div flex></div>
@@ -145,7 +145,7 @@
           <div flex="40">
               <md-input-container flex>
                 <label>Club Description</label>
-                <textarea ng-model="user.club.description" columns="1" ></textarea>
+                <textarea ng-model="user.role.club.description" columns="1" ></textarea>
             </md-input-container>
           </div>
           <div flex></div>
@@ -154,7 +154,7 @@
 <!--Submit-->
     <div layout="row">
         <div flex="50"></div>
-        <md-button class="md-raised" ng-click=updateClub(user.club)>Update</md-button>
+        <md-button class="md-raised" ng-click=updateClub(user.role.club)>Update</md-button>
         
     </div>
   </div>

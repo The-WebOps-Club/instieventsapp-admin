@@ -195,7 +195,7 @@ app.controller('convenorCtrl', function($scope, $http, $location, userService,  
     
     var req = {
      method: 'PUT',
-     url: server + '/api/admins/' + $localStorage.user._id + '/password',
+     url: server + 'api/admins/' + $localStorage.user._id + '/password',
      headers: {
        'Authorization': 'Bearer '+ $localStorage.token,
        'Content-Type' : 'application/json'
@@ -316,27 +316,7 @@ app.controller('secCtrl', function($scope, $http, $location, userService,  $loca
       });
   }
 
-   $scope.changePassword = function(newPassword){
-    
-    var req = {
-     method: 'PUT',
-     url: server + 'api/admins/' + $localStorage.user._id + '/password',
-     headers: {
-       'Authorization': 'Bearer '+ $localStorage.token,
-       'Content-Type' : 'application/json'
-     },
-     data: newPassword
-    }
-    $http(req).then(function(response){
-        console.log(response);
-        alert('successfully changed');
-      }, 
-      function(response){
-        if (response.status == 401){
-          $location.path('login');
-        } else alert(response.data.errors.message);
-      });
-  }
+  
 
   $scope.addSec = function(sec){
 
@@ -529,6 +509,7 @@ app.controller('coreCtrl', function($scope, $http, $location, $mdSidenav, userSe
     $scope.editClub = function(club){
     $scope.action = 'editClub';
     $scope.currentClub = club;
+
   }
 
   $scope.addConvenor = function(convenor){

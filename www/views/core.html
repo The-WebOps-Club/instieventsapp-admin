@@ -37,9 +37,9 @@
 		  </md-list-item>
 		  <md-divider></md-divider>
 		  <md-subheader class="md-no-sticky"></md-subheader>
-		  <md-list-item>
+		  <!-- <md-list-item>
 			 <md-button class="md-primary" ng-click="closeSideNavPanel()">Send push notifications</md-button>
-		  </md-list-item>
+		  </md-list-item> -->
 		  <md-list-item>
 			 <md-button class="md-primary" ng-click="action='ChangePassword';closeSideNavPanel()">Change Password</md-button>
 		  </md-list-item>
@@ -107,7 +107,7 @@
 		  						</div>
 		  						<div flex></div>
 		  						<div layout="row" layout-align="end center">
-		  							<md-button class="md-icon-button" aria-label="Edit" ng-click='editClub(club)'>
+		  							<md-button class="md-icon-button" aria-label="Edit" ng-click='action=editClub(club)'>
 		  							<md-tooltip>Edit</md-tooltip>
 		  							<md-icon md-svg-src="../css/edit.svg" class="s48" aria-label="Edit"></md-icon>
 									</md-button>
@@ -466,7 +466,7 @@
 </div>
 <!---->
 </div>
-</div>
+
 
 <div ng-switch-when="editClub">
 	
@@ -548,7 +548,6 @@
 					</div>
 					<div flex></div>
 				</div>
-			</div>
 		</form>   
 <!--Submit-->
 		<div layout="row">
